@@ -1,57 +1,218 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mes Projets - Mon Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mes Projets | EN - Portfolio</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">MonPortfolio</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Accueil</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">À Propos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="projects.html">Mes Projets</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                </ul>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">EN<span class="text-primary">.</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">À propos</a></li>
+          <li class="nav-item"><a class="nav-link active" href="projets.html">Projets</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="py-5 mt-5">
+    <div class="container">
+      <h1 class="text-center mb-5">Mes Projets</h1>
+      
+      <!-- Filtres -->
+      <div class="row mb-5">
+        <div class="col-12">
+          <div class="text-center">
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-outline-primary active" data-filter="all">Tous</button>
+              <button type="button" class="btn btn-outline-primary" data-filter="web">Sites Web</button>
+              <button type="button" class="btn btn-outline-primary" data-filter="wordpress">WordPress</button>
+              <button type="button" class="btn btn-outline-primary" data-filter="design">Design</button>
             </div>
+          </div>
         </div>
-    </nav>
+      </div>
 
-    <!-- Section Projets -->
-    <section class="py-5 mt-5">
-        <div class="container">
-            <h1 class="text-center display-4 fw-bold mb-5">Mes Projets</h1>
-            
-            <div class="row" id="projects-grid">
-                <!-- Les projets seront générés par JavaScript -->
+      <!-- Grille des projets -->
+      <div class="row" id="projects-grid">
+        
+        <!-- Projet 1 -->
+        <div class="col-lg-4 col-md-6 mb-4" data-category="web wordpress">
+          <div class="project-card card h-100">
+            <div class="project-image">
+              <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Site E-commerce">
+              <div class="project-badges">
+                <span class="badge bg-primary">WordPress</span>
+                <span class="badge bg-success">WooCommerce</span>
+              </div>
             </div>
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Boutique E-commerce</h5>
+              <p class="card-text flex-grow-1">Site e-commerce complet avec WooCommerce, paiements en ligne et gestion des stocks.</p>
+              <div class="project-tech mb-3">
+                <small class="text-muted">WordPress • WooCommerce • PHP • CSS</small>
+              </div>
+              <div class="project-actions">
+                <a href="#" class="btn btn-primary btn-sm">Voir le projet</a>
+                <a href="#" class="btn btn-outline-secondary btn-sm">Détails</a>
+              </div>
+            </div>
+          </div>
         </div>
-    </section>
 
-    <footer class="bg-dark text-white text-center py-4">
-        <div class="container">
-            <p>&copy; 2024 Mon Portfolio. Tous droits réservés.</p>
+        <!-- Projet 2 -->
+        <div class="col-lg-4 col-md-6 mb-4" data-category="design">
+          <div class="project-card card h-100">
+            <div class="project-image">
+              <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Application Mobile">
+              <div class="project-badges">
+                <span class="badge bg-warning">Figma</span>
+                <span class="badge bg-info">UI/UX</span>
+              </div>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">App Mobile Fitness</h5>
+              <p class="card-text flex-grow-1">Design d'interface utilisateur pour une application de fitness avec design system complet.</p>
+              <div class="project-tech mb-3">
+                <small class="text-muted">Figma • Prototypage • Design System</small>
+              </div>
+              <div class="project-actions">
+                <a href="#" class="btn btn-primary btn-sm">Voir les maquettes</a>
+              </div>
+            </div>
+          </div>
         </div>
-    </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+        <!-- Projet 3 -->
+        <div class="col-lg-4 col-md-6 mb-4" data-category="web">
+          <div class="project-card card h-100">
+            <div class="project-image">
+              <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Portfolio Artistique">
+              <div class="project-badges">
+                <span class="badge bg-primary">HTML/CSS</span>
+                <span class="badge bg-danger">JavaScript</span>
+              </div>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Portfolio Photographe</h5>
+              <p class="card-text flex-grow-1">Site portfolio élégant avec galerie interactive et animations CSS avancées.</p>
+              <div class="project-tech mb-3">
+                <small class="text-muted">HTML5 • CSS3 • JavaScript • GSAP</small>
+              </div>
+              <div class="project-actions">
+                <a href="#" class="btn btn-primary btn-sm">Visiter le site</a>
+                <a href="#" class="btn btn-outline-secondary btn-sm">Code source</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Projet 4 -->
+        <div class="col-lg-4 col-md-6 mb-4" data-category="wordpress">
+          <div class="project-card card h-100">
+            <div class="project-image">
+              <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Site Corporatif">
+              <div class="project-badges">
+                <span class="badge bg-success">WordPress</span>
+                <span class="badge bg-info">ACF</span>
+              </div>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Site Corporatif</h5>
+              <p class="card-text flex-grow-1">Thème WordPress sur mesure avec Advanced Custom Fields et templates personnalisés.</p>
+              <div class="project-tech mb-3">
+                <small class="text-muted">WordPress • PHP • ACF • Bootstrap</small>
+              </div>
+              <div class="project-actions">
+                <a href="#" class="btn btn-primary btn-sm">Voir le site</a>
+                <a href="#" class="btn btn-outline-secondary btn-sm">Admin</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Projet 5 -->
+        <div class="col-lg-4 col-md-6 mb-4" data-category="web">
+          <div class="project-card card h-100">
+            <div class="project-image">
+              <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Landing Page">
+              <div class="project-badges">
+                <span class="badge bg-primary">Bootstrap</span>
+                <span class="badge bg-warning">JavaScript</span>
+              </div>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Landing Page SaaS</h5>
+              <p class="card-text flex-grow-1">Page de vente avec formulaire interactif, animations et optimisation conversion.</p>
+              <div class="project-tech mb-3">
+                <small class="text-muted">Bootstrap • JavaScript • AOS • Formspree</small>
+              </div>
+              <div class="project-actions">
+                <a href="#" class="btn btn-primary btn-sm">Voir la page</a>
+                <a href="#" class="btn btn-outline-secondary btn-sm">Code source</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Projet 6 -->
+        <div class="col-lg-4 col-md-6 mb-4" data-category="design">
+          <div class="project-card card h-100">
+            <div class="project-image">
+              <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Design System">
+              <div class="project-badges">
+                <span class="badge bg-info">Design System</span>
+                <span class="badge bg-secondary">UI Kit</span>
+              </div>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Design System</h5>
+              <p class="card-text flex-grow-1">Système de design complet avec composants réutilisables et documentation.</p>
+              <div class="project-tech mb-3">
+                <small class="text-muted">Figma • Components • Auto-layout</small>
+              </div>
+              <div class="project-actions">
+                <a href="#" class="btn btn-primary btn-sm">Voir le système</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-dark text-white py-4">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <p class="mb-0">&copy; 2024 EN. Tous droits réservés.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <div class="social-links">
+            <a href="#" class="text-white me-3"><i class="bi bi-github"></i></a>
+            <a href="#" class="text-white me-3"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="text-white"><i class="bi bi-envelope"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
