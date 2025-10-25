@@ -1,133 +1,430 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>À Propos | EN - Designer & Intégrateur Web</title>
-  
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>À Propos | EN - Designer & Intégrateur Web</title>
+
+    <!-- Bootstrap & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
+
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="index.html">EN<span class="text-primary">.</span></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
-          <li class="nav-item"><a class="nav-link active" href="about.html">À propos</a></li>
-          <li class="nav-item"><a class="nav-link" href="projets.html">Projets</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+                <!-- Logo 3D Premium -->
+                <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    class="me-3">
+                    <defs>
+                        <linearGradient id="cubeGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#00a2ff" />
+                            <stop offset="100%" stop-color="#0088cc" />
+                        </linearGradient>
+                        <linearGradient id="cubeGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#0088cc" />
+                            <stop offset="100%" stop-color="#006699" />
+                        </linearGradient>
+                        <linearGradient id="cubeGradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#66c2ff" />
+                            <stop offset="100%" stop-color="#00a2ff" />
+                        </linearGradient>
+                        <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#000000" flood-opacity="0.3" />
+                        </filter>
+                    </defs>
 
-  <section class="py-5 mt-5">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-6">
-          <h1 class="display-5 fw-bold mb-4">À propos de moi</h1>
-          <div class="aec-badge mb-4">
-            <span class="badge bg-primary">Diplômé AEC Design Web et Intégration</span>
-          </div>
-          <p class="lead">Passionné par le design et le développement web, je crée des expériences digitales qui allient esthétique et performance.</p>
-          
-          <p>Après avoir complété mon AEC en Design Web et Intégration, j'ai développé une expertise solide dans la création d'interfaces modernes, accessibles et responsives.</p>
-          
-          <div class="mt-4">
-            <h5>Mes valeurs :</h5>
-            <ul class="list-unstyled">
-              <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Code propre et maintenable</li>
-              <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Design centré utilisateur</li>
-              <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Accessibilité pour tous</li>
-              <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Performance optimisée</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="col-lg-6 mt-5 mt-lg-0">
-          <div class="about-image text-center">
-            <img src="https://via.placeholder.com/400x500" alt="EN - Designer Web" class="img-fluid rounded-4 shadow">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+                    <!-- Cube 3D avec ombres portées -->
+                    <g filter="url(#shadow)">
+                        <path d="M15 22L30 12L45 22V38L30 48L15 38V22Z" fill="url(#cubeGradient1)" />
+                        <path d="M30 12L45 22V38L30 48V12Z" fill="url(#cubeGradient2)" />
+                        <path d="M30 48L15 38V22L30 12V48Z" fill="url(#cubeGradient3)" />
+                    </g>
 
-  <!-- Section Parcours -->
-  <section class="py-5 bg-light">
-    <div class="container">
-      <h2 class="text-center mb-5">Mon Parcours</h2>
-      <div class="row">
-        <div class="col-lg-8 mx-auto">
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="timeline-date">2023-2024</div>
-              <div class="timeline-content">
-                <h5>AEC Design Web et Intégration</h5>
-                <p class="text-muted">Formation intensive en design et développement web</p>
-                <ul>
-                  <li>Intégration HTML5/CSS3 avancée</li>
-                  <li>Développement WordPress thématique</li>
-                  <li>JavaScript et interactivité</li>
-                  <li>Accessibilité et référencement</li>
+                    <!-- Texte centré et bien visible -->
+                    <text x="30" y="32" text-anchor="middle" fill="white" font-family="Arial, sans-serif"
+                        font-weight="bold" font-size="6">
+                        <tspan x="30" dy="-3">EN</tspan>
+                    </text>
+                    <text x="30" y="40" text-anchor="middle" fill="white" font-family="Arial, sans-serif"
+                        font-weight="600" font-size="3">
+                        <tspan>PORTFOLIO</tspan>
+                    </text>
+
+                    <!-- Effets de lumière -->
+                    <path d="M20 25L30 20L40 25" stroke="white" stroke-width="0.5" stroke-opacity="0.3" fill="none" />
+                    <path d="M20 35L30 30L40 35" stroke="white" stroke-width="0.5" stroke-opacity="0.2" fill="none" />
+                </svg>
+
+                <div class="d-inline-block">
+                    <span class="fw-bold fs-4 text-white">EN Portfolio</span><br>
+                    <small class="text-secondary">Design & Intégration Web</small>
+                </div>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html">À propos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projets.html">Projets</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
-              </div>
             </div>
-            
-            <div class="timeline-item">
-              <div class="timeline-date">2024</div>
-              <div class="timeline-content">
-                <h5>Développement de Portfolio</h5>
-                <p class="text-muted">Création de projets personnels et professionnels</p>
-                <ul>
-                  <li>Sites vitrines responsives</li>
-                  <li>Thèmes WordPress custom</li>
-                  <li>Applications web interactives</li>
-                </ul>
-              </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section About -->
+    <section class="about-hero-section py-5 mt-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <span class="badge-aec mb-3">Diplômé AEC Design Web et Intégration</span>
+                    <h1 class="display-5 fw-bold mb-4">À propos de moi</h1>
+                    <p class="lead">Passionné par le design et le développement web, je crée des expériences digitales
+                        qui allient esthétique et performance.</p>
+
+                    <p>Après avoir complété mon AEC en Design Web et Intégration, j'ai développé une expertise solide
+                        dans la création d'interfaces modernes, accessibles et responsives.</p>
+
+                    <div class="mt-4">
+                        <h5 class="mb-3">Mes valeurs :</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                                <strong>Code propre et maintenable</strong> - Respect des bonnes pratiques
+                            </li>
+                            <li class="mb-2">
+                                <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                                <strong>Design centré utilisateur</strong> - Expériences intuitives et engageantes
+                            </li>
+                            <li class="mb-2">
+                                <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                                <strong>Accessibilité pour tous</strong> - Sites utilisables par tous les publics
+                            </li>
+                            <li class="mb-2">
+                                <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                                <strong>Performance optimisée</strong> - Temps de chargement rapides et efficacité
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mt-5 mt-lg-0">
+                    <div class="about-image text-center position-relative">
+                        <img src="images/apropos.jpg" 
+                             alt="EN - Designer & Intégrateur Web"
+                             class="img-fluid rounded-4 shadow-lg">
+                        <div class="experience-badge position-absolute top-0 start-0 m-3">
+                            <div class="bg-primary text-white rounded-pill px-3 py-2">
+                                <strong>5+</strong> Projets réalisés
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Section Téléchargement CV -->
-  <section class="py-5">
-    <div class="container text-center">
-      <h3 class="mb-4">Intéressé par mon profil ?</h3>
-      <p class="lead mb-4">Téléchargez mon CV pour en savoir plus sur mon parcours et mes compétences.</p>
-      <a href="#" class="btn btn-primary btn-lg">
-        <i class="bi bi-download me-2"></i>Télécharger mon CV
-      </a>
-    </div>
-  </section>
-
-  <footer class="bg-dark text-white py-4">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-6">
-          <p class="mb-0">&copy; 2024 EN. Tous droits réservés.</p>
+    <!-- Section Compétences Détaillées -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Mes Compétences Techniques</h2>
+            <div class="row">
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="skill-card h-100">
+                        <div class="skill-icon bg-primary">
+                            <i class="bi bi-palette-fill"></i>
+                        </div>
+                        <h5 class="text-center">Design</h5>
+                        <ul class="list-unstyled text-center">
+                            <li>Figma</li>
+                            <li>Adobe XD</li>
+                            <li>UI/UX Design</li>
+                            <li>Prototypage</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="skill-card h-100">
+                        <div class="skill-icon bg-success">
+                            <i class="bi bi-code-slash"></i>
+                        </div>
+                        <h5 class="text-center">Front-end</h5>
+                        <ul class="list-unstyled text-center">
+                            <li>HTML5/CSS3</li>
+                            <li>JavaScript</li>
+                            <li>Bootstrap</li>
+                            <li>Responsive</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="skill-card h-100">
+                        <div class="skill-icon bg-warning">
+                            <i class="bi bi-wordpress"></i>
+                        </div>
+                        <h5 class="text-center">WordPress</h5>
+                        <ul class="list-unstyled text-center">
+                            <li>Thèmes sur mesure</li>
+                            <li>ACF</li>
+                            <li>Custom Post Types</li>
+                            <li>Gutenberg</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="skill-card h-100">
+                        <div class="skill-icon bg-info">
+                            <i class="bi bi-gear-fill"></i>
+                        </div>
+                        <h5 class="text-center">Techniques</h5>
+                        <ul class="list-unstyled text-center">
+                            <li>Git/GitHub</li>
+                            <li>SEO</li>
+                            <li>Performance</li>
+                            <li>Accessibilité</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-md-6 text-md-end">
-          <div class="social-links">
-            <a href="#" class="text-white me-3"><i class="bi bi-github"></i></a>
-            <a href="#" class="text-white me-3"><i class="bi bi-linkedin"></i></a>
-            <a href="#" class="text-white"><i class="bi bi-envelope"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
+    </section>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="script.js"></script>
+    <!-- Section Parcours -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Mon Parcours</h2>
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date bg-primary text-white">2023-2024</div>
+                            <div class="timeline-content">
+                                <h5 class="text-primary">AEC Design Web et Intégration</h5>
+                                <p class="text-muted mb-3">Formation intensive en design et développement web</p>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h6>Compétences acquises :</h6>
+                                        <ul>
+                                            <li>Intégration HTML5/CSS3 avancée</li>
+                                            <li>Développement WordPress thématique</li>
+                                            <li>JavaScript et interactivité</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h6>Technologies maîtrisées :</h6>
+                                        <ul>
+                                            <li>Figma, Adobe XD</li>
+                                            <li>Bootstrap, Sass</li>
+                                            <li>PHP, MySQL</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-date bg-success text-white">2024</div>
+                            <div class="timeline-content">
+                                <h5 class="text-success">Développement de Portfolio</h5>
+                                <p class="text-muted mb-3">Création de projets personnels et professionnels</p>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h6>Réalisations :</h6>
+                                        <ul>
+                                            <li>Sites vitrines responsives</li>
+                                            <li>Thèmes WordPress custom</li>
+                                            <li>Applications web interactives</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h6>Expertises développées :</h6>
+                                        <ul>
+                                            <li>Accessibilité WCAG</li>
+                                            <li>Optimisation SEO</li>
+                                            <li>Performance web</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-date bg-info text-white">Futur</div>
+                            <div class="timeline-content">
+                                <h5 class="text-info">Projets à venir</h5>
+                                <p class="text-muted mb-3">Développement continu et nouvelles technologies</p>
+                                <ul>
+                                    <li>Applications React/Next.js</li>
+                                    <li>E-commerce avancé</li>
+                                    <li>Animation et interactivité</li>
+                                    <li>Accessibilité avancée</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Méthodologie -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Ma Méthodologie de Travail</h2>
+            <div class="row">
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="text-center">
+                        <div class="process-step bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
+                             style="width: 80px; height: 80px;">
+                            <span class="fs-4 fw-bold">1</span>
+                        </div>
+                        <h5>Analyse & Conception</h5>
+                        <p class="text-muted">Étude des besoins, recherche utilisateur et création des wireframes</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="text-center">
+                        <div class="process-step bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
+                             style="width: 80px; height: 80px;">
+                            <span class="fs-4 fw-bold">2</span>
+                        </div>
+                        <h5>Design & Prototypage</h5>
+                        <p class="text-muted">Maquettes interactives, design system et validation utilisateur</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="text-center">
+                        <div class="process-step bg-warning text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
+                             style="width: 80px; height: 80px;">
+                            <span class="fs-4 fw-bold">3</span>
+                        </div>
+                        <h5>Développement</h5>
+                        <p class="text-muted">Intégration responsive, accessibilité et optimisation performance</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="text-center">
+                        <div class="process-step bg-info text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
+                             style="width: 80px; height: 80px;">
+                            <span class="fs-4 fw-bold">4</span>
+                        </div>
+                        <h5>Livraison & Support</h5>
+                        <p class="text-muted">Tests qualité, déploiement et support post-livraison</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Téléchargement CV -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container text-center">
+            <h3 class="mb-4">Intéressé par mon profil ?</h3>
+            <p class="lead mb-4">Téléchargez mon CV pour découvrir mon parcours complet et mes compétences détaillées.</p>
+            <div class="d-flex gap-3 justify-content-center flex-wrap">
+                <a href="#" class="btn btn-light btn-lg">
+                    <i class="bi bi-download me-2"></i>Télécharger mon CV
+                </a>
+                <a href="contact.html" class="btn btn-outline-light btn-lg">
+                    <i class="bi bi-envelope me-2"></i>Me contacter
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-3">EN Portfolio</h5>
+                    <p>Créateur numérique alliant design et performance. Passionné par les interfaces modernes et
+                        intuitives.</p>
+                    <div class="d-flex align-items-center mt-3">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            class="me-2">
+                            <path d="M10 12L20 8L30 12V22L20 26L10 22V12Z" fill="#00a2ff" />
+                            <path d="M20 8L30 12V22L20 26V8Z" fill="#0088cc" />
+                            <path d="M20 26L10 22V12L20 8V26Z" fill="#66c2ff" />
+                            <text x="20" y="18" text-anchor="middle" fill="white" font-family="Arial" font-weight="bold"
+                                font-size="5">EN</text>
+                        </svg>
+                        <span class="fw-bold">Design & Intégration Web</span>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 mb-4">
+                    <h5 class="mb-3">Navigation</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-light text-decoration-none">Accueil</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-light text-decoration-none">À propos</a></li>
+                        <li class="mb-2"><a href="projets.html" class="text-light text-decoration-none">Projets</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-light text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 mb-4">
+                    <h5 class="mb-3">Contact</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a href="mailto:contact@en-portfolio.com" class="text-light text-decoration-none">
+                                <i class="bi bi-envelope me-2"></i>contact@en-portfolio.com
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="tel:+15141234567" class="text-light text-decoration-none">
+                                <i class="bi bi-phone me-2"></i>+1 (514) 123-4567
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-geo-alt me-2"></i>Montréal, Canada
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 mb-4">
+                    <h5 class="mb-3">Suivez-moi</h5>
+                    <div class="social-links">
+                        <a href="#" class="social-link me-2" aria-label="LinkedIn">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                        <a href="#" class="social-link me-2" aria-label="GitHub">
+                            <i class="bi bi-github"></i>
+                        </a>
+                        <a href="#" class="social-link me-2" aria-label="Behance">
+                            <i class="bi bi-behance"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Dribbble">
+                            <i class="bi bi-dribbble"></i>
+                        </a>
+                    </div>
+                    <div class="mt-3">
+                        <span class="text-muted">Disponible pour de nouveaux projets</span>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-4">
+
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 <strong>EN Portfolio</strong> — Tous droits réservés</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>
