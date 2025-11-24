@@ -4,68 +4,142 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mes Projets | EN - Designer & Intégrateur Web</title>
+    <meta name="description"
+        content="Découvrez les projets réalisés par Elrhalia Noussairi durant sa formation AEC en Design et Intégration Web.">
+    <title>Mes Projets | Elrhalia Noussairi - Designer & Intégrateur Web</title>
 
     <!-- Bootstrap & Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="images/favicon.png">
+    <style>
+        :root {
+            --primary-color: #00a2ff;
+            --primary-dark: #0088cc;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            padding-top: 76px;
+            background-color: #f8f9fa;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .projects-hero {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            padding: 4rem 0;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            border: none;
+            height: 100%;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-image {
+            height: 200px;
+            background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 3rem;
+            position: relative;
+        }
+
+        .project-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+        }
+
+        .tech-badge {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+        }
+
+        .filter-btn.active {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .category-section {
+            margin-bottom: 4rem;
+        }
+
+        .category-title {
+            position: relative;
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .category-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--primary-color);
+        }
+
+        .btn-project {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .btn-project:hover {
+            background: var(--primary-dark);
+            color: white;
+            transform: translateY(-2px);
+        }
+    </style>
 </head>
 
 <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
-                <!-- Logo 3D Premium -->
-                <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"
-                    class="me-3">
-                    <defs>
-                        <linearGradient id="cubeGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#00a2ff" />
-                            <stop offset="100%" stop-color="#0088cc" />
-                        </linearGradient>
-                        <linearGradient id="cubeGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#0088cc" />
-                            <stop offset="100%" stop-color="#006699" />
-                        </linearGradient>
-                        <linearGradient id="cubeGradient3" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#66c2ff" />
-                            <stop offset="100%" stop-color="#00a2ff" />
-                        </linearGradient>
-                        <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-                            <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#000000" flood-opacity="0.3" />
-                        </filter>
-                    </defs>
-
-                    <!-- Cube 3D avec ombres portées -->
-                    <g filter="url(#shadow)">
-                        <path d="M15 22L30 12L45 22V38L30 48L15 38V22Z" fill="url(#cubeGradient1)" />
-                        <path d="M30 12L45 22V38L30 48V12Z" fill="url(#cubeGradient2)" />
-                        <path d="M30 48L15 38V22L30 12V48Z" fill="url(#cubeGradient3)" />
-                    </g>
-
-                    <!-- Texte centré et bien visible -->
-                    <text x="30" y="32" text-anchor="middle" fill="white" font-family="Arial, sans-serif"
-                        font-weight="bold" font-size="6">
-                        <tspan x="30" dy="-3">EN</tspan>
-                    </text>
-                    <text x="30" y="40" text-anchor="middle" fill="white" font-family="Arial, sans-serif"
-                        font-weight="600" font-size="3">
-                        <tspan>PORTFOLIO</tspan>
-                    </text>
-
-                    <!-- Effets de lumière -->
-                    <path d="M20 25L30 20L40 25" stroke="white" stroke-width="0.5" stroke-opacity="0.3" fill="none" />
-                    <path d="M20 35L30 30L40 35" stroke="white" stroke-width="0.5" stroke-opacity="0.2" fill="none" />
-                </svg>
-
-                <div class="d-inline-block">
-                    <span class="fw-bold fs-4 text-white">EN Portfolio</span><br>
-                    <small class="text-secondary">Design & Intégration Web</small>
-                </div>
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-code-slash me-2"></i>
+                Elrhalia Noussairi
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -75,8 +149,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">À propos</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="projets.html">Projets</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="projets.html">Mes Projets</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
             </div>
@@ -84,327 +157,273 @@
     </nav>
 
     <!-- Hero Section Projets -->
-    <section class="projects-hero-section py-5 mt-5">
+    <section class="projects-hero">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
-                    <span class="badge-aec mb-3">Portfolio Créatif</span>
+                    <span class="badge bg-primary mb-3">Projets de Formation AEC</span>
                     <h1 class="display-5 fw-bold mb-4">Mes Réalisations</h1>
-                    <p class="lead mb-4">Découvrez une sélection de mes projets en design et développement web, alliant créativité, technique et expérience utilisateur.</p>
+                    <p class="lead">Découvrez les projets que j'ai développés durant ma formation en Design et
+                        Intégration Web</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section Projets -->
-    <section class="py-5">
+    <!-- Projets Figma -->
+    <section class="py-5 category-section">
         <div class="container">
-            <!-- Filtres -->
-            <div class="row mb-5">
-                <div class="col-12">
-                    <div class="text-center">
-                        <div class="btn-group btn-group-sm" role="group" aria-label="Filtres des projets">
-                            <button type="button" class="btn btn-outline-primary active" data-filter="all">Tous</button>
-                            <button type="button" class="btn btn-outline-primary" data-filter="web">Sites Web</button>
-                            <button type="button" class="btn btn-outline-primary" data-filter="wordpress">WordPress</button>
-                            <button type="button" class="btn btn-outline-primary" data-filter="design">Design</button>
-                            <button type="button" class="btn btn-outline-primary" data-filter="ecommerce">E-commerce</button>
+            <h2 class="category-title">Design UI/UX avec Figma</h2>
+            <div class="row g-4">
+                <!-- Projet Figma 1 - ZOO FALARDEAU -->
+                <div class="col-lg-6">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="bi bi-palette"></i>
+                            <span class="project-badge badge bg-warning">Figma</span>
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Grille des projets -->
-            <div class="row" id="projects-grid">
-                
-                <!-- Projet 1 -->
-                <div class="col-lg-4 col-md-6 mb-4" data-category="web wordpress ecommerce">
-                    <div class="project-card card h-100">
-                        <div class="project-image position-relative">
-                            <img src="https://via.placeholder.com/400x250/667eea/ffffff?text=E-commerce+Moderne" 
-                                 class="card-img-top" 
-                                 alt="Site E-commerce moderne avec interface utilisateur intuitive">
-                            <div class="project-badges">
-                                <span class="badge bg-primary">WordPress</span>
-                                <span class="badge bg-success">WooCommerce</span>
-                                <span class="badge bg-warning">Responsive</span>
+                        <div class="p-4">
+                            <h5>Site Zoo Falardeau</h5>
+                            <p class="text-muted mb-3">Design d'interface moderne pour le site web du Zoo Falardeau</p>
+                            <div class="mb-3">
+                                <span class="tech-badge">Figma</span>
+                                <span class="tech-badge">UI Design</span>
+                                <span class="tech-badge">Prototypage</span>
+                                <span class="tech-badge">Design System</span>
                             </div>
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Boutique E-commerce Moderne</h5>
-                            <p class="card-text flex-grow-1">Site e-commerce complet avec WooCommerce, système de paiement sécurisé et gestion avancée des stocks.</p>
-                            <div class="project-tech mb-3">
-                                <small class="text-muted">WordPress • WooCommerce • PHP • CSS • JavaScript</small>
-                            </div>
-                            <div class="project-actions">
-                                <a href="#" class="btn btn-primary btn-sm">
-                                    <i class="bi bi-eye me-1"></i>Voir le projet
-                                </a>
-                                <a href="#" class="btn btn-outline-secondary btn-sm">
-                                    <i class="bi bi-info-circle me-1"></i>Détails
-                                </a>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">Projet AEC - Note: A</small>
+                                <button
+                                    onclick="window.open('https://www.figma.com/proto/gcmabUgxaSuXwFBgnZq0hX/Zoo-Falardeau?node-id=73-30&starting-point-node-id=73%3A30&t=fLbEwAbsBZ8frajU-1', '_blank')"
+                                    class="btn btn-primary btn-sm">
+                                    <i class="bi bi-box-arrow-up-right me-1"></i>Voir le projet
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Projet 2 -->
-                <div class="col-lg-4 col-md-6 mb-4" data-category="design">
-                    <div class="project-card card h-100">
-                        <div class="project-image position-relative">
-                            <img src="https://via.placeholder.com/400x250/764ba2/ffffff?text=App+Fitness" 
-                                 class="card-img-top" 
-                                 alt="Application mobile fitness avec design moderne">
-                            <div class="project-badges">
-                                <span class="badge bg-warning">Figma</span>
-                                <span class="badge bg-info">UI/UX</span>
-                                <span class="badge bg-success">Mobile</span>
-                            </div>
+                <!-- Projet Figma 2 - MAISON MERE -->
+                <div class="col-lg-6">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="bi bi-house"></i>
+                            <span class="project-badge badge bg-warning">Figma</span>
                         </div>
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Application Fitness Mobile</h5>
-                            <p class="card-text flex-grow-1">Design d'interface utilisateur complet avec design system, prototypage interactif et tests utilisateurs.</p>
-                            <div class="project-tech mb-3">
-                                <small class="text-muted">Figma • Prototypage • Design System • User Research</small>
+                        <div class="p-4">
+                            <h5>Refonte Maison Mère</h5>
+                            <p class="text-muted mb-3">Refonte complète de l'interface du site Maison Mère avec
+                                amélioration de l'expérience utilisateur.</p>
+                            <div class="mb-3">
+                                <span class="tech-badge">Figma</span>
+                                <span class="tech-badge">UX Research</span>
+                                <span class="tech-badge">Wireframes</span>
+                                <span class="tech-badge">User Testing</span>
                             </div>
-                            <div class="project-actions">
-                                <a href="#" class="btn btn-primary btn-sm">
-                                    <i class="bi bi-palette me-1"></i>Voir les maquettes
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Projet 3 -->
-                <div class="col-lg-4 col-md-6 mb-4" data-category="web">
-                    <div class="project-card card h-100">
-                        <div class="project-image position-relative">
-                            <img src="https://via.placeholder.com/400x250/00a2ff/ffffff?text=Portfolio+Créatif" 
-                                 class="card-img-top" 
-                                 alt="Portfolio artistique avec galerie interactive">
-                            <div class="project-badges">
-                                <span class="badge bg-primary">HTML/CSS</span>
-                                <span class="badge bg-danger">JavaScript</span>
-                                <span class="badge bg-info">Animation</span>
-                            </div>
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Portfolio Artistique Élégant</h5>
-                            <p class="card-text flex-grow-1">Site portfolio avec galerie interactive, animations CSS avancées et design responsive élégant.</p>
-                            <div class="project-tech mb-3">
-                                <small class="text-muted">HTML5 • CSS3 • JavaScript • GSAP • Responsive</small>
-                            </div>
-                            <div class="project-actions">
-                                <a href="#" class="btn btn-primary btn-sm">
-                                    <i class="bi bi-box-arrow-up-right me-1"></i>Visiter le site
-                                </a>
-                                <a href="#" class="btn btn-outline-secondary btn-sm">
-                                    <i class="bi bi-github me-1"></i>Code source
-                                </a>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">Projet AEC - Note: A-</small>
+                                <button
+                                    onclick="window.open('https://www.figma.com/proto/AsuWNTsrwV9bUZIMkOllij/Design-site--Maison-M%C3%A8re?node-id=1-4&t=2CJbor8sgAz1BFHA-1', '_blank')"
+                                    class="btn btn-primary btn-sm">
+                                    <i class="bi bi-box-arrow-up-right me-1"></i>Voir le projet
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Projet 4 -->
-                <div class="col-lg-4 col-md-6 mb-4" data-category="wordpress web">
-                    <div class="project-card card h-100">
-                        <div class="project-image position-relative">
-                            <img src="https://via.placeholder.com/400x250/28a745/ffffff?text=Site+Corporatif" 
-                                 class="card-img-top" 
-                                 alt="Site corporatif professionnel avec design moderne">
-                            <div class="project-badges">
-                                <span class="badge bg-success">WordPress</span>
-                                <span class="badge bg-info">ACF</span>
-                                <span class="badge bg-primary">Custom Theme</span>
-                            </div>
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Site Corporatif Professionnel</h5>
-                            <p class="card-text flex-grow-1">Thème WordPress sur mesure avec Advanced Custom Fields, templates personnalisés et back-end intuitif.</p>
-                            <div class="project-tech mb-3">
-                                <small class="text-muted">WordPress • PHP • ACF • Bootstrap • SEO</small>
-                            </div>
-                            <div class="project-actions">
-                                <a href="#" class="btn btn-primary btn-sm">
-                                    <i class="bi bi-eye me-1"></i>Voir le site
-                                </a>
-                                <a href="#" class="btn btn-outline-secondary btn-sm">
-                                    <i class="bi bi-layout-text-window me-1"></i>Admin
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Projet 5 -->
-                <div class="col-lg-4 col-md-6 mb-4" data-category="web">
-                    <div class="project-card card h-100">
-                        <div class="project-image position-relative">
-                            <img src="https://via.placeholder.com/400x250/ffc107/ffffff?text=Landing+Page" 
-                                 class="card-img-top" 
-                                 alt="Landing page SaaS avec design conversion-focused">
-                            <div class="project-badges">
-                                <span class="badge bg-primary">Bootstrap</span>
-                                <span class="badge bg-warning">JavaScript</span>
-                                <span class="badge bg-success">SEO</span>
-                            </div>
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Landing Page SaaS Élégante</h5>
-                            <p class="card-text flex-grow-1">Page de vente optimisée avec formulaire interactif, animations subtiles et optimisation des conversions.</p>
-                            <div class="project-tech mb-3">
-                                <small class="text-muted">Bootstrap • JavaScript • AOS • Formspree • Analytics</small>
-                            </div>
-                            <div class="project-actions">
-                                <a href="#" class="btn btn-primary btn-sm">
-                                    <i class="bi bi-box-arrow-up-right me-1"></i>Voir la page
-                                </a>
-                                <a href="#" class="btn btn-outline-secondary btn-sm">
-                                    <i class="bi bi-github me-1"></i>Code source
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Projet 6 -->
-                <div class="col-lg-4 col-md-6 mb-4" data-category="design">
-                    <div class="project-card card h-100">
-                        <div class="project-image position-relative">
-                            <img src="https://via.placeholder.com/400x250/6f42c1/ffffff?text=Design+System" 
-                                 class="card-img-top" 
-                                 alt="Système de design complet avec composants">
-                            <div class="project-badges">
-                                <span class="badge bg-info">Design System</span>
-                                <span class="badge bg-secondary">UI Kit</span>
-                                <span class="badge bg-success">Components</span>
-                            </div>
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Système de Design Complet</h5>
-                            <p class="card-text flex-grow-1">Design system avec composants réutilisables, guidelines détaillées et documentation complète.</p>
-                            <div class="project-tech mb-3">
-                                <small class="text-muted">Figma • Components • Auto-layout • Design Tokens</small>
-                            </div>
-                            <div class="project-actions">
-                                <a href="#" class="btn btn-primary btn-sm">
-                                    <i class="bi bi-palette2 me-1"></i>Voir le système
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Message aucun projet -->
-            <div id="no-projects-message" class="text-center py-5 d-none">
-                <i class="bi bi-inbox display-1 text-muted mb-3"></i>
-                <h4 class="text-muted">Aucun projet trouvé</h4>
-                <p class="text-muted">Essayez avec un autre filtre pour voir plus de projets.</p>
             </div>
         </div>
     </section>
 
-    <!-- Section Call to Action -->
-    <section class="py-5 bg-light">
-        <div class="container text-center">
-            <h2 class="mb-4">Vous avez un projet en tête ?</h2>
-            <p class="lead mb-4">Travaillons ensemble pour donner vie à vos idées avec un design exceptionnel et un développement de qualité.</p>
-            <div class="d-flex gap-3 justify-content-center flex-wrap">
-                <a href="contact.html" class="btn btn-primary btn-lg">
-                    <i class="bi bi-chat-dots me-2"></i>Discutons de votre projet
-                </a>
-                <a href="about.html" class="btn btn-outline-primary btn-lg">
-                    <i class="bi bi-person me-2"></i>En savoir plus sur moi
-                </a>
+    <!-- Projets HTML/CSS/Bootstrap -->
+    <section class="py-5 category-section">
+        <div class="container">
+            <h2 class="category-title">Intégration Web - HTML, CSS, Bootstrap</h2>
+            <div class="row g-4">
+                <!-- Projet HTML/CSS 1 -->
+                <div class="col-lg-6">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="bi bi-egg-fried"></i>
+                            <span class="project-badge badge bg-success">HTML/CSS</span>
+                        </div>
+                        <div class="p-4">
+                            <h5>Site de Cuisine Marocaine</h5>
+                            <p class="text-muted mb-3">Site web responsive dédié à la cuisine marocaine avec recettes,
+                                galerie et blog intégrés.</p>
+                            <div class="mb-3">
+                                <span class="tech-badge">HTML5</span>
+                                <span class="tech-badge">CSS3</span>
+                                <span class="tech-badge">Bootstrap</span>
+                                <span class="tech-badge">JavaScript</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">Projet AEC - Note: A</small>
+                                <button
+                                    onclick="window.open('https://elrhalianoussairi.github.io/-TP3_Noussairi_Elrhalia/', '_blank')"
+                                    class="btn btn-primary btn-sm">
+                                    <i class="bi bi-box-arrow-up-right me-1"></i>Voir le projet
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet HTML/CSS 2 -->
+                <div class="col-lg-6">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="bi bi-house-heart"></i>
+                            <span class="project-badge badge bg-success">HTML/CSS</span>
+                        </div>
+                        <div class="p-4">
+                            <h5>Refonte Maison Mère</h5>
+                            <p class="text-muted mb-3">Intégration web complète du design Figma avec animations CSS et
+                                interface responsive.</p>
+                            <div class="mb-3">
+                                <span class="tech-badge">HTML5</span>
+                                <span class="tech-badge">CSS3</span>
+                                <span class="tech-badge">Bootstrap</span>
+                                <span class="tech-badge">Git</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">Projet AEC - Note: B+</small>
+                                <button onclick="window.open('https://votresitemaisonmere.com', '_blank')"
+                                    class="btn btn-primary btn-sm">
+                                    <i class="bi bi-box-arrow-up-right me-1"></i>Voir le projet
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projets WordPress/PHP -->
+<section class="py-5 category-section">
+    <div class="container">
+        <h2 class="category-title">Développement WordPress & PHP</h2>
+        <div class="row g-4">
+            <!-- Projet WordPress 1 -->
+            <div class="col-lg-6">
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="bi bi-wordpress"></i>
+                        <span class="project-badge badge bg-info">WordPress</span>
+                    </div>
+                    <div class="p-4">
+                        <h5>Site Studio Blue Steel</h5>
+                        <p class="text-muted mb-3">Site WordPress personnalisé pour Studio Blue Steel. Spécialité : Modèles pour Hommes.</p>
+                        <div class="mb-3">
+                            <span class="tech-badge">WordPress</span>
+                            <span class="tech-badge">PHP</span>
+                            <span class="tech-badge">MySQL</span>
+                            <span class="tech-badge">Custom Theme</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted">Projet AEC - Note: A</small>
+                            <button onclick="window.open('https://terminalnoussairi.gr2025-17.expertiseweb.ca/', '_blank')"
+                                    class="btn btn-primary btn-sm">
+                                <i class="bi bi-box-arrow-up-right me-1"></i>Voir le projet
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projet WordPress 2 -->
+            <div class="col-lg-6">
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="bi bi-globe"></i>
+                        <span class="project-badge badge bg-info">WordPress</span>
+                    </div>
+                    <div class="p-4">
+                        <h5>Site La Maison de Thé</h5>
+                        <p class="text-muted mb-3">Site WordPress développé et hébergé avec thème personnalisé et fonctionnalités avancées.</p>
+                        <div class="mb-3">
+                            <span class="tech-badge">WordPress</span>
+                            <span class="tech-badge">PHP</span>
+                            <span class="tech-badge">Hébergement</span>
+                            <span class="tech-badge">Custom Plugin</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted">Projet AEC - Note: A-</small>
+                            <button onclick="window.open('https://monsitetp2elrhalia.gr2025-17.expertiseweb.ca/', '_blank')"
+                                    class="btn btn-primary btn-sm">
+                                <i class="bi bi-box-arrow-up-right me-1"></i>Voir le projet
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Section Appel à l'action -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="display-6 fw-bold mb-4">Intéressé par mon travail ?</h2>
+                    <p class="lead mb-4">Je suis disponible pour discuter de vos projets, stages ou collaborations.</p>
+                    <a href="contact.html" class="btn btn-light btn-lg">
+                        <i class="bi bi-chat-dots me-2"></i>Contactez-moi
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white py-5">
+    <footer class="py-5 bg-dark text-white">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <h5 class="mb-3">EN Portfolio</h5>
-                    <p>Créateur numérique alliant design et performance. Passionné par les interfaces modernes et intuitives.</p>
-                    <div class="d-flex align-items-center mt-3">
-                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"
-                            class="me-2">
-                            <path d="M10 12L20 8L30 12V22L20 26L10 22V12Z" fill="#00a2ff" />
-                            <path d="M20 8L30 12V22L20 26V8Z" fill="#0088cc" />
-                            <path d="M20 26L10 22V12L20 8V26Z" fill="#66c2ff" />
-                            <text x="20" y="18" text-anchor="middle" fill="white" font-family="Arial" font-weight="bold"
-                                font-size="5">EN</text>
-                        </svg>
-                        <span class="fw-bold">Design & Intégration Web</span>
+                <div class="col-lg-6 mb-4">
+                    <h5 class="mb-3">Elrhalia Noussairi</h5>
+                    <p class="mb-4">Jeune diplômé en Design et Intégration Web passionné par la création digitale.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="btn btn-outline-light btn-sm">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                        <a href="#" class="btn btn-outline-light btn-sm">
+                            <i class="bi bi-github"></i>
+                        </a>
+                        <a href="#" class="btn btn-outline-light btn-sm">
+                            <i class="bi bi-envelope"></i>
+                        </a>
                     </div>
                 </div>
-
-                <div class="col-lg-2 mb-4">
+                <div class="col-lg-3 mb-4">
                     <h5 class="mb-3">Navigation</h5>
                     <ul class="list-unstyled">
                         <li class="mb-2"><a href="index.html" class="text-light text-decoration-none">Accueil</a></li>
-                        <li class="mb-2"><a href="about.html" class="text-light text-decoration-none">À propos</a></li>
-                        <li class="mb-2"><a href="projets.html" class="text-light text-decoration-none">Projets</a></li>
+                        <li class="mb-2"><a href="projets.html" class="text-light text-decoration-none">Mes Projets</a>
+                        </li>
                         <li class="mb-2"><a href="contact.html" class="text-light text-decoration-none">Contact</a></li>
                     </ul>
                 </div>
-
                 <div class="col-lg-3 mb-4">
-                    <h5 class="mb-3">Contact</h5>
+                    <h5 class="mb-3">Compétences</h5>
                     <ul class="list-unstyled">
-                        <li class="mb-2">
-                            <a href="mailto:contact@en-portfolio.com" class="text-light text-decoration-none">
-                                <i class="bi bi-envelope me-2"></i>contact@en-portfolio.com
-                            </a>
-                        </li>
-                        <li class="mb-2">
-                            <a href="tel:+15141234567" class="text-light text-decoration-none">
-                                <i class="bi bi-phone me-2"></i>+1 (514) 123-4567
-                            </a>
-                        </li>
-                        <li class="mb-2">
-                            <i class="bi bi-geo-alt me-2"></i>Montréal, Canada
-                        </li>
+                        <li class="mb-1">HTML5 / CSS3</li>
+                        <li class="mb-1">JavaScript</li>
+                        <li class="mb-1">Bootstrap</li>
+                        <li class="mb-1">UI/UX Design</li>
                     </ul>
                 </div>
-
-                <div class="col-lg-3 mb-4">
-                    <h5 class="mb-3">Suivez-moi</h5>
-                    <div class="social-links">
-                        <a href="#" class="social-link me-2" aria-label="LinkedIn">
-                            <i class="bi bi-linkedin"></i>
-                        </a>
-                        <a href="#" class="social-link me-2" aria-label="GitHub">
-                            <i class="bi bi-github"></i>
-                        </a>
-                        <a href="#" class="social-link me-2" aria-label="Behance">
-                            <i class="bi bi-behance"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Dribbble">
-                            <i class="bi bi-dribbble"></i>
-                        </a>
-                    </div>
-                    <div class="mt-3">
-                        <span class="text-muted">Disponible pour de nouveaux projets</span>
-                    </div>
-                </div>
             </div>
-
             <hr class="my-4">
-
             <div class="text-center">
-                <p class="mb-0">&copy; 2025 <strong>EN Portfolio</strong> — Tous droits réservés</p>
+                <p class="mb-0">&copy; 2025 Elrhalia Noussairi. Diplômé AEC Design et Intégration Web.</p>
             </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+      <script src="script.js"></script>
 </body>
 
 </html>
