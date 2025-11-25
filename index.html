@@ -4,13 +4,14 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Portfolio de Elrhalia Noussairi, jeune diplômé en Design et Intégration Web. Découvrez mes projets et compétences.">
+    <meta name="description"
+        content="Portfolio de Elrhalia Noussairi, jeune diplômé en Design et Intégration Web. Découvrez mes projets et compétences.">
     <title>Accueil | Elrhalia Noussairi - Designer & Intégrateur Web</title>
 
     <!-- Bootstrap & Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="images/favicon.png">
     <style>
         :root {
@@ -18,17 +19,17 @@
             --primary-dark: #0088cc;
             --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
-        
+
         body {
             font-family: 'Segoe UI', system-ui, sans-serif;
             padding-top: 76px;
         }
-        
+
         .navbar {
             background: var(--gradient);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
-        
+
         .hero-section {
             background: var(--gradient);
             color: white;
@@ -36,7 +37,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .hero-section::before {
             content: "";
             position: absolute;
@@ -44,40 +45,45 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
             animation: rotate-bg 20s linear infinite;
         }
-        
+
         @keyframes rotate-bg {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
-        
+
         .badge-new {
-            background: rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.2);
             color: white;
             padding: 0.5rem 1.5rem;
             border-radius: 2rem;
             font-weight: 600;
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.3);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
-        
+
         .skill-card {
             background: white;
             border-radius: 1rem;
             padding: 2rem;
             text-align: center;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
             border: none;
             height: 100%;
         }
-        
+
         .skill-card:hover {
             transform: translateY(-5px);
         }
-        
+
         .skill-icon {
             width: 70px;
             height: 70px;
@@ -90,21 +96,21 @@
             font-size: 1.5rem;
             margin: 0 auto 1rem;
         }
-        
+
         .project-card {
             background: white;
             border-radius: 1rem;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
             border: none;
             height: 100%;
         }
-        
+
         .project-card:hover {
             transform: translateY(-5px);
         }
-        
+
         .project-image {
             height: 200px;
             background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
@@ -114,7 +120,7 @@
             color: #666;
             font-size: 3rem;
         }
-        
+
         .btn-primary {
             background: var(--primary-color);
             border: none;
@@ -123,21 +129,21 @@
             font-weight: 600;
             transition: all 0.3s ease;
         }
-        
+
         .btn-primary:hover {
             background: var(--primary-dark);
             transform: translateY(-2px);
         }
-        
+
         .motivation-section {
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
         }
-        
+
         footer {
             background: #2d3748;
             color: white;
         }
-        
+
         .tech-badge {
             background: var(--primary-color);
             color: white;
@@ -148,7 +154,7 @@
             margin-bottom: 0.5rem;
             display: inline-block;
         }
-        
+
         .btn-project {
             background: var(--primary-color);
             color: white;
@@ -160,7 +166,7 @@
             display: inline-block;
             transition: all 0.3s ease;
         }
-        
+
         .btn-project:hover {
             background: var(--primary-dark);
             color: white;
@@ -176,13 +182,13 @@
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.html">
                 <i class="bi bi-code-slash me-2"></i>
-               Elrhalia Noussairi
+                Elrhalia Noussairi
             </a>
-            
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
+
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link active" href="index.html">Accueil</a></li>
@@ -200,7 +206,8 @@
                 <div class="col-lg-8 mx-auto text-center">
                     <span class="badge-new mb-3">Jeune Diplômé AEC Design & Intégration Web</span>
                     <h1 class="display-4 fw-bold mb-4">Passionné par le Web & Motivé à Apprendre</h1>
-                    <p class="lead mb-4">Fraîchement diplômé, je maîtrise les technologies modernes du web et suis impatient de mettre mes compétences au service de vos projets.</p>
+                    <p class="lead mb-4">Fraîchement diplômé, je maîtrise les technologies modernes du web et suis
+                        impatient de mettre mes compétences au service de vos projets.</p>
                     <div class="hero-buttons">
                         <a href="projets.html" class="btn btn-light btn-lg me-3">
                             <i class="bi bi-eye me-2"></i>Voir mes projets
@@ -220,10 +227,11 @@
             <div class="row mb-5">
                 <div class="col-lg-8 mx-auto text-center">
                     <h2 class="display-5 fw-bold mb-3">Compétences Maîtrisées</h2>
-                    <p class="lead">Durant ma formation AEC, j'ai acquis une solide base en développement web front-end</p>
+                    <p class="lead">Durant ma formation AEC, j'ai acquis une solide base en développement web front-end
+                    </p>
                 </div>
             </div>
-            
+
             <div class="row g-4">
                 <div class="col-md-4">
                     <div class="skill-card">
@@ -231,20 +239,22 @@
                             <i class="bi bi-filetype-html"></i>
                         </div>
                         <h4>HTML5 & CSS3</h4>
-                        <p class="text-muted">Maîtrise des balises sémantiques, Flexbox, Grid, animations CSS et design responsive.</p>
+                        <p class="text-muted">Maîtrise des balises sémantiques, Flexbox, Grid, animations CSS et design
+                            responsive.</p>
                     </div>
                 </div>
-                
+
                 <div class="col-md-4">
                     <div class="skill-card">
                         <div class="skill-icon">
                             <i class="bi bi-bootstrap"></i>
                         </div>
                         <h4>Bootstrap 5</h4>
-                        <p class="text-muted">Création d'interfaces modernes et responsives avec le framework Bootstrap.</p>
+                        <p class="text-muted">Création d'interfaces modernes et responsives avec le framework Bootstrap.
+                        </p>
                     </div>
                 </div>
-                
+
                 <div class="col-md-4">
                     <div class="skill-card">
                         <div class="skill-icon">
@@ -255,7 +265,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="row g-4 mt-2">
                 <div class="col-md-6">
                     <div class="skill-card">
@@ -263,10 +273,11 @@
                             <i class="bi bi-palette"></i>
                         </div>
                         <h4>UI/UX Design</h4>
-                        <p class="text-muted">Conception d'interfaces utilisateur intuitives et expériences optimisées.</p>
+                        <p class="text-muted">Conception d'interfaces utilisateur intuitives et expériences optimisées.
+                        </p>
                     </div>
                 </div>
-                
+
                 <div class="col-md-6">
                     <div class="skill-card">
                         <div class="skill-icon">
@@ -280,157 +291,245 @@
         </div>
     </section>
 
-<!-- Section Projets Récents -->
-<section class="py-5 bg-light">
-    <div class="container">
-        <div class="row mb-5">
-            <div class="col-lg-8 mx-auto text-center">
-                <h2 class="display-5 fw-bold mb-3">Mes Projets Réalisés</h2>
-                <p class="lead">Découvrez les travaux que j'ai réalisés durant ma formation AEC</p>
-            </div>
-        </div>
-        
-        <div class="row g-4">
-            <!-- Projet Figma 1 -->
-            <div class="col-md-4">
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="bi bi-palette"></i>
-                    </div>
-                    <div class="p-4">
-                        <span class="badge bg-warning mb-2">Figma</span>
-                        <h5>Zoo Falardeau</h5>
-                        <p class="text-muted">Design d'interface moderne pour le site web du Zoo Falardeau avec prototypage interactif.</p>
-                        <div class="mb-3">
-                            <span class="tech-badge">Figma</span>
-                            <span class="tech-badge">UI Design</span>
-                            <span class="tech-badge">Prototypage</span>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <small class="text-muted">Note AEC: A</small>
-                            <button onclick="window.open('https://www.figma.com/proto/gcmabUgxaSuXwFBgnZq0hX/Zoo-Falardeau?node-id=73-30&starting-point-node-id=73%3A30&t=fLbEwAbsBZ8frajU-1', '_blank')" 
-                                    class="btn btn-primary btn-sm">
-                                <i class="bi bi-box-arrow-up-right me-1"></i>Voir le projet
-                            </button>
-                        </div>
-                    </div>
+    <!-- Section Projets Récents -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="display-5 fw-bold mb-3">Mes Projets Réalisés</h2>
+                    <p class="lead">Découvrez les travaux que j'ai réalisés durant ma formation AEC</p>
                 </div>
             </div>
-            
-            <!-- Projet HTML/CSS 1 -->
-            <div class="col-md-4">
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="bi bi-egg-fried"></i>
-                    </div>
-                    <div class="p-4">
-                        <span class="badge bg-success mb-2">HTML/CSS</span>
-                        <h5>Cuisine Marocaine</h5>
-                        <p class="text-muted">Site web responsive dédié à la cuisine marocaine avec recettes et galerie.</p>
-                        <div class="mb-3">
-                            <span class="tech-badge">HTML5</span>
-                            <span class="tech-badge">CSS3</span>
-                            <span class="tech-badge">Bootstrap</span>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <small class="text-muted">Note AEC: A</small>
-                            <button onclick="window.open('https://elrhalianoussairi.github.io/-TP3_Noussairi_Elrhalia/', '_blank')" 
-                                    class="btn btn-primary btn-sm">
-                                <i class="bi bi-box-arrow-up-right me-1"></i>Voir le projet
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Projet WordPress -->
-            <div class="col-md-4">
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="bi bi-wordpress"></i>
-                    </div>
-                    <div class="p-4">
-                        <span class="badge bg-info mb-2">WordPress</span>
-                        <h5>Site La Maison de Thé</h5>
-                        <p class="text-muted">Site WordPress développé et hébergé avec thème personnalisé et fonctionnalités avancées.</p>
-                        <div class="mb-3">
-                            <span class="tech-badge">WordPress</span>
-                            <span class="tech-badge">PHP</span>
-                            <span class="tech-badge">MySQL</span>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <small class="text-muted">Note AEC: A</small>
-                            <button onclick="window.open('https://terminalnoussairi.gr2025-17.expertiseweb.ca/', '_blank')" 
-                                    class="btn btn-primary btn-sm">
-                                <i class="bi bi-box-arrow-up-right me-1"></i>Voir le projet
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="text-center mt-5">
-            <a href="projets.html" class="btn btn-primary btn-lg">
-                <i class="bi bi-folder2-open me-2"></i>Voir tous mes projets
-            </a>
-        </div>
-    </div>
-</section>
 
-<!-- Section Motivation -->
-<section class="py-5 motivation-section">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-8">
-                <h2 class="fw-bold mb-3">Pourquoi collaborer avec moi ?</h2>
-                <p class="lead mb-4">En tant que jeune diplômé, j'apporte :</p>
-                <div class="row">
-                    <div class="col-md-6">
-                        <ul class="list-unstyled">
-                            <li class="mb-3"><i class="bi bi-lightning-charge-fill text-primary me-2"></i><strong>Motivation à toute épreuve</strong></li>
-                            <li class="mb-3"><i class="bi bi-arrow-clockwise text-primary me-2"></i><strong>Capacité d'adaptation rapide</strong></li>
-                            <li class="mb-3"><i class="bi bi-book text-primary me-2"></i><strong>Envie constante d'apprendre</strong></li>
-                        </ul>
+            <div class="row g-4">
+                <!-- Projet Figma 1 -->
+                <div class="col-md-4">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="bi bi-palette"></i>
+                        </div>
+                        <div class="p-4">
+                            <span class="badge bg-warning mb-2">Figma</span>
+                            <h5>Zoo Falardeau</h5>
+                            <p class="text-muted">Design d'interface moderne pour le site web du Zoo Falardeau avec
+                                prototypage interactif.</p>
+                            <div class="mb-3">
+                                <span class="tech-badge">Figma</span>
+                                <span class="tech-badge">UI Design</span>
+                                <span class="tech-badge">Prototypage</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button
+                                    onclick="window.open('https://www.figma.com/proto/gcmabUgxaSuXwFBgnZq0hX/Zoo-Falardeau?node-id=73-30&starting-point-node-id=73%3A30&t=fLbEwAbsBZ8frajU-1', '_blank')"
+                                    class="btn btn-primary btn-sm">
+                                    <i class="bi bi-box-arrow-up-right me-1"></i>Voir le projet
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <ul class="list-unstyled">
-                            <li class="mb-3"><i class="bi bi-gem text-primary me-2"></i><strong>Connaissances récentes et à jour</strong></li>
-                            <li class="mb-3"><i class="bi bi-cash-coin text-primary me-2"></i><strong>Rapport qualité-prix intéressant</strong></li>
-                            <li class="mb-3"><i class="bi bi-heart text-primary me-2"></i><strong>Passion authentique pour le web</strong></li>
-                        </ul>
+                </div>
+
+                <!-- Projet HTML/CSS 1 -->
+                <div class="col-md-4">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="bi bi-egg-fried"></i>
+                        </div>
+                        <div class="p-4">
+                            <span class="badge bg-success mb-2">HTML/CSS</span>
+                            <h5>Cuisine Marocaine</h5>
+                            <p class="text-muted">Site web responsive dédié à la cuisine marocaine avec recettes et
+                                galerie.</p>
+                            <div class="mb-3">
+                                <span class="tech-badge">HTML5</span>
+                                <span class="tech-badge">CSS3</span>
+                                <span class="tech-badge">Bootstrap</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button
+                                    onclick="window.open('https://elrhalianoussairi.github.io/-TP3_Noussairi_Elrhalia/', '_blank')"
+                                    class="btn btn-primary btn-sm">
+                                    <i class="bi bi-box-arrow-up-right me-1"></i>Voir le projet
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet WordPress -->
+                <div class="col-md-4">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="bi bi-wordpress"></i>
+                        </div>
+                        <div class="p-4">
+                            <span class="badge bg-info mb-2">WordPress</span>
+                            <h5>Site La Maison de Thé</h5>
+                            <p class="text-muted">Site WordPress développé et hébergé avec thème personnalisé et
+                                fonctionnalités avancées.</p>
+                            <div class="mb-3">
+                                <span class="tech-badge">WordPress</span>
+                                <span class="tech-badge">PHP</span>
+                                <span class="tech-badge">MySQL</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button
+                                    onclick="window.open('https://terminalnoussairi.gr2025-17.expertiseweb.ca/', '_blank')"
+                                    class="btn btn-primary btn-sm">
+                                    <i class="bi bi-box-arrow-up-right me-1"></i>Voir le projet
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 text-center">
-                <div class="p-4">
-                    <i class="bi bi-award display-1 text-primary"></i>
-                    <h4 class="mt-3">Diplômé AEC</h4>
-                    <p class="text-muted">Design & Intégration Web</p>
+
+            <div class="text-center mt-5">
+                <a href="projets.html" class="btn btn-primary btn-lg">
+                    <i class="bi bi-folder2-open me-2"></i>Voir tous mes projets
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Section Motivation -->
+    <section class="py-5 motivation-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h2 class="fw-bold mb-3">Pourquoi collaborer avec moi ?</h2>
+                    <p class="lead mb-4">En tant que jeune diplômé, j'apporte :</p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-3"><i
+                                        class="bi bi-lightning-charge-fill text-primary me-2"></i><strong>Motivation à
+                                        toute épreuve</strong></li>
+                                <li class="mb-3"><i class="bi bi-arrow-clockwise text-primary me-2"></i><strong>Capacité
+                                        d'adaptation rapide</strong></li>
+                                <li class="mb-3"><i class="bi bi-book text-primary me-2"></i><strong>Envie constante
+                                        d'apprendre</strong></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-3"><i class="bi bi-gem text-primary me-2"></i><strong>Connaissances
+                                        récentes et à jour</strong></li>
+                                <li class="mb-3"><i
+                                        class="bi bi-arrows-angle-contract text-primary me-2"></i><strong>Flexibilité et
+                                        écoute active</strong></li>
+                                <li class="mb-3"><i class="bi bi-heart text-primary me-2"></i><strong>Passion
+                                        authentique pour le web</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <div class="p-4">
+                        <i class="bi bi-award display-1 text-primary"></i>
+                        <h4 class="mt-3">Diplômé AEC</h4>
+                        <p class="text-muted">Design & Intégration Web</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+        <!-- Compteur de Visites -->
+    <section class="py-4 bg-light">
+        <div class="container text-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h4 class="mb-3">📊 Statistiques du Portfolio</h4>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <div class="card border-0 shadow-sm">
+                                <div class="card-body">
+                                    <i class="bi bi-eye display-6 text-primary mb-2"></i>
+                                    <h5 id="totalVisits">0</h5>
+                                    <p class="text-muted mb-0">Visites totales</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="card border-0 shadow-sm">
+                                <div class="card-body">
+                                    <i class="bi bi-person display-6 text-success mb-2"></i>
+                                    <h5 id="uniqueVisitors">0</h5>
+                                    <p class="text-muted mb-0">Visiteurs uniques</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="card border-0 shadow-sm">
+                                <div class="card-body">
+                                    <i class="bi bi-clock display-6 text-info mb-2"></i>
+                                    <h5 id="currentVisitors">0</h5>
+                                    <p class="text-muted mb-0">Visites aujourd'hui</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-muted small mt-3">
+                        <i class="bi bi-info-circle me-1"></i>
+                        Ces statistiques sont stockées localement sur votre appareil
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <!-- Footer -->
+    <script>
+        // Compteur de visites avancé
+        function updateVisitStats() {
+            // Initialiser les données si elles n'existent pas
+            let stats = JSON.parse(localStorage.getItem('portfolioStats') || '{}');
+            
+            // Date actuelle
+            const today = new Date().toDateString();
+            
+            // Initialiser les compteurs
+            if (!stats.totalVisits) stats.totalVisits = 0;
+            if (!stats.uniqueVisitors) stats.uniqueVisitors = 0;
+            if (!stats.dailyVisits) stats.dailyVisits = {};
+            if (!stats.lastVisit) stats.lastVisit = '';
+            
+            // Vérifier si c'est un nouveau visiteur
+            let visitorId = localStorage.getItem('visitorId');
+            if (!visitorId) {
+                visitorId = 'visitor_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+                localStorage.setItem('visitorId', visitorId);
+                stats.uniqueVisitors++;
+            }
+            
+            // Incrémenter les compteurs
+            stats.totalVisits++;
+            stats.dailyVisits[today] = (stats.dailyVisits[today] || 0) + 1;
+            stats.lastVisit = new Date().toLocaleString('fr-FR');
+            
+            // Sauvegarder les statistiques
+            localStorage.setItem('portfolioStats', JSON.stringify(stats));
+            
+            // Mettre à jour l'affichage
+            document.getElementById('totalVisits').textContent = stats.totalVisits.toLocaleString();
+            document.getElementById('uniqueVisitors').textContent = stats.uniqueVisitors.toLocaleString();
+            document.getElementById('currentVisitors').textContent = stats.dailyVisits[today].toLocaleString();
+        }
+        
+        // Mettre à jour les statistiques au chargement de la page
+        document.addEventListener('DOMContentLoaded', updateVisitStats);
+    </script>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark text-white">
+        <!-- ... le reste de votre footer existant ... -->
+
+    <!-- Footer -->
     <footer class="py-5 bg-dark text-white">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 mb-4">
                     <h5 class="mb-3">Elrhalia Noussairi</h5>
-                    <p class="mb-4">Jeune diplômé en Design et Intégration Web passionné par la création digitale.</p>
-                    <div class="d-flex gap-3">
-                        <a href="#" class="btn btn-outline-light btn-sm">
-                            <i class="bi bi-linkedin"></i>
-                        </a>
-                        <a href="#" class="btn btn-outline-light btn-sm">
-                            <i class="bi bi-github"></i>
-                        </a>
-                        <a href="#" class="btn btn-outline-light btn-sm">
-                            <i class="bi bi-envelope"></i>
-                        </a>
-                    </div>
+                   <p class="mb-4">Jeune diplômée en Design et Intégration Web, je suis passionnée par la création d'interfaces modernes et intuitives. Forte d'une formation complète en développement front-end et design UI/UX, je maîtrise les technologies actuelles pour concevoir des sites web responsives, performants et centrés sur l'expérience utilisateur. Curieuse et rigoureuse, je suis constamment à l'affût des nouvelles tendances et méthodes de travail pour proposer des solutions digitales innovantes et adaptées à vos besoins.</p>
+
                 </div>
                 <div class="col-lg-3 mb-4">
                     <h5 class="mb-3">Navigation</h5>
@@ -458,7 +557,7 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-      <script src="script.js"></script>
+
 </body>
 
 </html>
