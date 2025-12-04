@@ -58,3 +58,37 @@
 .dark-theme .bg-light {
     background-color: var(--bg-light) !important;
 }
+/* Styles pour le footer amélioré */
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+    margin-right: 10px;
+}
+
+.social-links a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    color: #fff !important;
+}
+
+.social-links i {
+    margin-right: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .social-links {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .social-links a {
+        width: fit-content;
+    }
+}
