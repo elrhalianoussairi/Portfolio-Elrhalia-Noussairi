@@ -1,10 +1,48 @@
 /* Animations pour le JavaScript */
+
+/* LOGO ANIMÉ */
+.logo-svg {
+    width: 42px;
+    height: 42px;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+.logo .ring {
+    stroke-dasharray: 260;
+    stroke-dashoffset: 260;
+    animation: dash 1.8s ease forwards, glow 2.5s infinite alternate ease-in-out;
+}
+
+@keyframes dash {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes glow {
+    0% {
+        filter: drop-shadow(0 0 2px #6a5af9);
+    }
+    100% {
+        filter: drop-shadow(0 0 8px #b372f4);
+    }
+}
+
+/* Effet rotation au survol */
+.logo-svg:hover {
+    transform: rotate(8deg);
+}
+
+/* Navbar au scroll */
 .navbar-scrolled {
     background: rgba(13, 17, 23, 0.95) !important;
     backdrop-filter: blur(10px);
-    padding: 0.5rem 0;
+    padding: 0.5rem 0 !important;
+    transition: all 0.3s ease !important;
 }
 
+/* Bouton retour en haut */
 .btn-scroll-top {
     position: fixed;
     bottom: 2rem;
@@ -12,13 +50,23 @@
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
-    background: var(--primary-color);
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
     color: white;
     border: none;
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
     z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 162, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.btn-scroll-top:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 162, 255, 0.4);
 }
 
 .btn-scroll-top.show {
@@ -26,6 +74,11 @@
     visibility: visible;
 }
 
+.btn-scroll-top i {
+    font-size: 1.2rem;
+}
+
+/* Animations d'apparition */
 .fade-in {
     opacity: 0;
     transform: translateY(30px);
@@ -38,9 +91,16 @@
 }
 
 /* Loader pour le formulaire */
+.form-loading {
+    position: relative;
+    pointer-events: none;
+    opacity: 0.7;
+}
+
 .spinner-border-sm {
     width: 1rem;
     height: 1rem;
+    border-width: 0.15em;
 }
 
 /* Transition pour le filtrage des projets */
@@ -53,42 +113,356 @@
     --bg-light: #1a1d23;
     --text-primary: #f8f9fa;
     --text-secondary: #adb5bd;
+    background-color: #121212;
+    color: var(--text-primary);
 }
 
 .dark-theme .bg-light {
     background-color: var(--bg-light) !important;
 }
-/* Styles pour le footer amélioré */
-.social-links a {
+
+.dark-theme .card,
+.dark-theme .project-card,
+.dark-theme .skill-card,
+.dark-theme .contact-card {
+    background-color: #2d2d2d !important;
+    color: var(--text-primary) !important;
+    border-color: #404040 !important;
+}
+
+.dark-theme .text-muted {
+    color: var(--text-secondary) !important;
+}
+
+/* Footer amélioré */
+footer .social-links a {
     display: inline-flex;
     align-items: center;
     text-decoration: none;
     padding: 8px 16px;
-    border-radius: 4px;
+    border-radius: 8px;
     transition: all 0.3s ease;
     background: rgba(255, 255, 255, 0.1);
     margin-right: 10px;
+    margin-bottom: 10px;
+    color: #fff !important;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.social-links a:hover {
+footer .social-links a:hover {
     background: rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
-    color: #fff !important;
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-.social-links i {
+footer .social-links i {
     margin-right: 8px;
+    font-size: 1.1rem;
 }
 
-/* Responsive */
+/* Styles responsives */
+
+/* Tablettes */
+@media (max-width: 992px) {
+    .hero-section {
+        padding: 5rem 0;
+    }
+    
+    .display-4 {
+        font-size: calc(1.475rem + 2.7vw);
+    }
+    
+    .navbar-brand {
+        font-size: 1.1rem;
+    }
+    
+    .logo-svg {
+        width: 38px;
+        height: 38px;
+        margin-right: 8px;
+    }
+    
+    .btn-lg {
+        padding: 0.625rem 1.5rem;
+        font-size: 1rem;
+    }
+    
+    .category-section {
+        margin-bottom: 3rem;
+    }
+}
+
+/* Mobiles (portrait) */
 @media (max-width: 768px) {
+    body {
+        padding-top: 72px;
+    }
+    
+    .hero-section {
+        padding: 4rem 0;
+    }
+    
+    .hero-section::before {
+        animation: rotate-bg 25s linear infinite;
+    }
+    
+    .display-4 {
+        font-size: calc(1.375rem + 1.5vw);
+    }
+    
+    .display-5 {
+        font-size: calc(1.325rem + 0.9vw);
+    }
+    
+    .lead {
+        font-size: 1.1rem;
+    }
+    
+    /* Navigation mobile */
+    .navbar-collapse {
+        background: rgba(13, 17, 23, 0.98);
+        backdrop-filter: blur(15px);
+        padding: 1rem;
+        border-radius: 0.5rem;
+        margin-top: 0.5rem;
+    }
+    
+    .navbar-nav {
+        text-align: center;
+    }
+    
+    .navbar-nav .nav-link {
+        padding: 0.75rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .navbar-nav .nav-link:last-child {
+        border-bottom: none;
+    }
+    
+    /* Boutons hero */
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+    
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 280px;
+        margin: 0.25rem 0;
+    }
+    
+    .hero-buttons .me-3 {
+        margin-right: 0 !important;
+    }
+    
+    /* Cartes */
+    .contact-card,
+    .project-card,
+    .skill-card {
+        padding: 1.5rem;
+    }
+    
+    .contact-icon,
+    .skill-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+    
+    /* Social links en colonne */
     .social-links {
         display: flex;
         flex-direction: column;
         gap: 10px;
+        align-items: flex-start;
     }
     
-    .social-links a {
-        width: fit-content;
+    footer .social-links a {
+        width: 100%;
+        justify-content: center;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    /* Bouton scroll top */
+    .btn-scroll-top {
+        width: 2.5rem;
+        height: 2.5rem;
+        bottom: 1.5rem;
+        right: 1.5rem;
+    }
+    
+    .btn-scroll-top i {
+        font-size: 1rem;
+    }
+    
+    /* Sections padding */
+    .py-5 {
+        padding-top: 2.5rem !important;
+        padding-bottom: 2.5rem !important;
+    }
+    
+    .py-4 {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+    
+    /* Badge */
+    .badge-new {
+        padding: 0.4rem 1.2rem;
+        font-size: 0.85rem;
+    }
+    
+    /* Contact coordonnées */
+    .contact-coord {
+        font-size: 1.1rem;
+        padding: 0.5rem;
+    }
+    
+    /* Tech badges */
+    .tech-badge {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.6rem;
+        margin-right: 0.3rem;
+        margin-bottom: 0.3rem;
+    }
+}
+
+/* Petits mobiles */
+@media (max-width: 576px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .display-4 {
+        font-size: 2rem;
+    }
+    
+    .display-5 {
+        font-size: 1.75rem;
+    }
+    
+    .hero-section {
+        padding: 3rem 0;
+    }
+    
+    .logo-svg {
+        width: 34px;
+        height: 34px;
+    }
+    
+    .navbar-brand {
+        font-size: 1rem;
+    }
+    
+    /* Boutons plus petits */
+    .btn-lg {
+        padding: 0.5rem 1.25rem;
+        font-size: 0.95rem;
+    }
+    
+    .btn-sm {
+        padding: 0.25rem 0.75rem;
+        font-size: 0.8rem;
+    }
+    
+    /* Cartes encore plus petites */
+    .contact-card,
+    .project-card,
+    .skill-card {
+        padding: 1.25rem;
+    }
+    
+    /* Footer plus compact */
+    footer {
+        text-align: center;
+    }
+    
+    footer .row > div {
+        margin-bottom: 1.5rem;
+    }
+    
+    footer h5 {
+        margin-bottom: 1rem;
+    }
+    
+    /* Project image plus petit */
+    .project-image {
+        height: 160px;
+    }
+    
+    .project-image i {
+        font-size: 2.5rem;
+    }
+    
+    /* Ajustement du padding global */
+    section {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+}
+
+/* Orientation paysage mobile */
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero-section {
+        padding: 3rem 0;
+        min-height: auto;
+    }
+    
+    .navbar {
+        padding: 0.5rem 0;
+    }
+    
+    .hero-buttons {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .hero-buttons .btn {
+        width: auto;
+        margin: 0.5rem;
+    }
+}
+
+/* Animations plus lentes sur mobile pour économiser la batterie */
+@media (max-width: 768px) {
+    .hero-section::before {
+        animation-duration: 30s;
+    }
+    
+    .logo .ring {
+        animation-duration: 2s;
+    }
+}
+
+/* Correction pour l'impression */
+@media print {
+    .navbar,
+    .btn-scroll-top,
+    .hero-buttons,
+    button {
+        display: none !important;
+    }
+    
+    body {
+        padding-top: 0;
+    }
+    
+    a[href]::after {
+        content: " (" attr(href) ")";
+    }
+    
+    .contact-card,
+    .project-card,
+    .skill-card {
+        break-inside: avoid;
+        box-shadow: none !important;
+        border: 1px solid #ddd !important;
     }
 }

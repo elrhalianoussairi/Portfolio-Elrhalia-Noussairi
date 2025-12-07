@@ -4,50 +4,153 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Contactez-moi pour votre projet web. Jeune diplômé en Design et Intégration Web, je suis passionné et motivé à collaborer sur vos projets.">
+    <meta name="description"
+        content="Contactez Elrhalia Noussairi, jeune diplômé en Design et Intégration Web. Disponible pour vos projets.">
     <title>Contact | Elrhalia Noussairi - Designer & Intégrateur Web</title>
 
-    <!-- Bootstrap & Icons -->
+   <!-- Bootstrap & Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-      <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="images/favicon.png">
     <style>
         :root {
             --primary-color: #00a2ff;
             --primary-dark: #0088cc;
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
-        
+
         body {
             font-family: 'Segoe UI', system-ui, sans-serif;
             padding-top: 76px;
-            background-color: #f8f9fa;
         }
-        
+
         .navbar {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: var(--gradient);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
-        
-        .contact-hero {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
-            padding: 4rem 0;
+
+        .hero-section {
+            background: var(--gradient);
+            color: white;
+            padding: 6rem 0;
+            position: relative;
+            overflow: hidden;
         }
-        
+
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: rotate-bg 20s linear infinite;
+        }
+
+        @keyframes rotate-bg {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .badge-new {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* Styles pour les cartes contact */
         .contact-card {
             background: white;
-            border-radius: 1rem;
-            padding: 2rem;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            border: none;
+            border-radius: 1.5rem;
+            padding: 3rem 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
             text-align: center;
             height: 100%;
         }
-        
-        .contact-icon {
-            width: 70px;
-            height: 70px;
+
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .contact-card .contact-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color), #667eea);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            margin: 0 auto 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover .contact-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .btn-primary {
             background: var(--primary-color);
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 162, 255, 0.3);
+        }
+
+        /* Section coordination */
+        .contact-coord {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin: 1rem 0;
+            padding: 0.75rem;
+            background: rgba(0, 162, 255, 0.05);
+            border-radius: 0.75rem;
+        }
+
+        .alert-info {
+            background: rgba(0, 162, 255, 0.1);
+            border: none;
+            border-radius: 1rem;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        /* Section disponibilité */
+        .availability-card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .availability-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -56,46 +159,67 @@
             font-size: 1.5rem;
             margin: 0 auto 1.5rem;
         }
-        
-        .btn-primary {
-            background: var(--primary-color);
-            border: none;
-            padding: 0.75rem 2rem;
-            border-radius: 0.75rem;
-            font-weight: 600;
-        }
-        
-        .btn-primary:hover {
-            background: var(--primary-dark);
-        }
-        
-        .contact-info {
-            font-size: 1.2rem;
-            margin: 1rem 0;
-            font-weight: 600;
-        }
-        
-        .copy-btn {
-            background: transparent;
-            border: 1px solid var(--primary-color);
-            color: var(--primary-color);
-            padding: 0.25rem 0.75rem;
-            border-radius: 0.5rem;
-            font-size: 0.8rem;
-            cursor: pointer;
-            margin-left: 0.5rem;
-        }
-        
-        .copy-btn:hover {
-            background: var(--primary-color);
+
+        footer {
+            background: #2d3748;
             color: white;
         }
-        
-        .motivation-section {
+
+        .social-links a {
+            transition: color 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color) !important;
+        }
+
+        .hero-buttons .btn {
+            border-radius: 0.75rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .hero-buttons .btn-light {
             background: white;
-            border-radius: 1rem;
-            padding: 2rem;
-            border-left: 4px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .hero-buttons .btn-light:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-buttons .btn-outline-light:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Correction centrage */
+        .section-heading {
+            text-align: center !important;
+        }
+
+        .section-subtitle {
+            text-align: center !important;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .contact-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .availability-card {
+                padding: 2rem;
+            }
+
+            .contact-coord {
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
@@ -105,8 +229,32 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">
-                <i class="bi bi-code-slash me-2"></i>
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+
+                <!-- LOGO ANIMÉ -->
+                <span class="logo">
+                    <svg width="42" height="42" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        class="logo-svg">
+                        <defs>
+                            <linearGradient id="gradEN" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#6a5af9" />
+                                <stop offset="100%" stop-color="#b372f4" />
+                            </linearGradient>
+                        </defs>
+
+                        <!-- Cercle animé -->
+                        <circle cx="50" cy="50" r="40" stroke="url(#gradEN)" stroke-width="6" stroke-linecap="round"
+                            class="ring" />
+
+                        <!-- Initiales EN -->
+                        <text x="50%" y="55%" text-anchor="middle" fill="white" font-size="38"
+                            font-family="Poppins, sans-serif" font-weight="700" letter-spacing="2">
+                            EN
+                        </text>
+                    </svg>
+                </span>
+
+                <!-- Nom -->
                 Elrhalia Noussairi
             </a>
 
@@ -116,158 +264,243 @@
 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Accueil</a></li>
                     <li class="nav-item"><a class="nav-link" href="projets.html">Mes Projets</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="contact-hero">
+    <!-- Hero Section - -->
+    <section class="hero-section">
+        <div class="container position-relative">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto text-center">
+                    <span class="badge-new mb-3">Jeune Diplômé AEC Design & Intégration Web</span>
+                    <h1 class="display-4 fw-bold mb-4">Contactez-moi</h1>
+                    <p class="lead mb-4">Jeune diplômé en Design et Intégration Web, disponible pour vos projets</p>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact - Version simplifiée et centrée -->
+    <section class="py-5" id="contact-info">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-10 mx-auto text-center">
+                    <h2 class="display-4 fw-bold mb-4 section-heading">Prenez contact avec moi</h2>
+                    <p class="lead fs-5 section-subtitle">Disponible pour vos projets web et opportunités
+                        professionnelles</p>
+                </div>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                <!-- Email -->
+                <div class="col-lg-5 col-md-6">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="bi bi-envelope-fill"></i>
+                        </div>
+                        <h3 class="fw-bold mb-3">Par email</h3>
+                        <p class="text-muted mb-4">Idéal pour les projets détaillés et les échanges écrits</p>
+                        <div class="contact-coord">
+                            elrhalia.noussairi@gmail.com
+                        </div>
+                        <button class="btn btn-primary btn-lg w-100 mt-3"
+                            onclick="copyToClipboard('elrhalia.noussairi@gmail.com')">
+                            <i class="bi bi-clipboard-check me-2"></i>Copier l'email
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Téléphone -->
+                <div class="col-lg-5 col-md-6">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="bi bi-telephone-fill"></i>
+                        </div>
+                        <h3 class="fw-bold mb-3">Par téléphone</h3>
+                        <p class="text-muted mb-4">Parfait pour une discussion rapide et directe</p>
+                        <div class="contact-coord">
+                            +1 (418) 570-3956
+                        </div>
+                        <button class="btn btn-primary btn-lg w-100 mt-3" onclick="copyToClipboard('+14185703956')">
+                            <i class="bi bi-clipboard-check me-2"></i>Copier le numéro
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Statut de disponibilité -->
+            <div class="row mt-5 justify-content-center">
+                <div class="col-lg-8">
+                    <div class="alert alert-info text-center py-4">
+                        <div class="d-flex flex-column flex-md-row align-items-center justify-content-center gap-3">
+                            <span class="badge bg-primary px-4 py-2 fs-6">
+                                <i class="bi bi-check-circle-fill me-2"></i>Disponible immédiatement
+                            </span>
+                            <span class="fw-semibold fs-5">Réponse garantée sous 24 heures</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Opportunités -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="display-5 fw-bold mb-4 section-heading">Types de collaboration</h2>
+                    <p class="lead section-subtitle">Je suis ouvert à différentes opportunités professionnelles</p>
+                </div>
+            </div>
+
+            <div class="availability-card">
+                <div class="row justify-content-center">
+                    <div class="col-md-4 text-center mb-4 mb-md-0">
+                        <div class="availability-icon">
+                            <i class="bi bi-briefcase-fill"></i>
+                        </div>
+                        <h4 class="fw-bold">Stages</h4>
+                        <p class="text-muted">Recherche active de stage en entreprise</p>
+                    </div>
+
+                    <div class="col-md-4 text-center mb-4 mb-md-0">
+                        <div class="availability-icon">
+                            <i class="bi bi-laptop-fill"></i>
+                        </div>
+                        <h4 class="fw-bold">Projets freelance</h4>
+                        <p class="text-muted">Développement web sur mesure</p>
+                    </div>
+
+                    <div class="col-md-4 text-center">
+                        <div class="availability-icon">
+                            <i class="bi bi-building-fill"></i>
+                        </div>
+                        <h4 class="fw-bold">CDI/CDD</h4>
+                        <p class="text-muted">Opportunités professionnelles à long terme</p>
+                    </div>
+                </div>
+
+                <div class="text-center mt-5">
+                    <a href="projets.html" class="btn btn-outline-primary btn-lg px-5">
+                        <i class="bi bi-folder2-open me-2"></i>Découvrir mes réalisations
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark text-white">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 mx-auto text-center">
-                    <h1 class="display-5 fw-bold mb-4">Contactez-moi</h1>
-                    <p class="lead mb-4">Jeune diplômé en Design et Intégration Web, disponible pour vos projets</p>
-                </div>
-            </div>
-        </div>
-    </section>
+                <div class="col-lg-6 mb-4">
+                    <h5 class="mb-3">Elrhalia Noussairi</h5>
+                    <p class="mb-4">Designer & intégratrice web spécialisée en UI/UX et développement front-end. Je crée
+                        des interfaces modernes, accessibles et centrées sur l’expérience utilisateur.</p>
 
-    <!-- Section Contact -->
-    <section class="py-5">
-        <div class="container">
-            <div class="row g-4">
-                <!-- Email -->
-                <div class="col-md-6">
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="bi bi-envelope"></i>
-                        </div>
-                        <h4>Email</h4>
-                        <p class="text-muted">Pour les projets, stages ou collaborations</p>
-                        <div class="contact-info">
-                            elrhalia.noussairi@gmail.com
-                            <button class="copy-btn" onclick="copyToClipboard('elrhalia.noussairi@gmail.com')">
-                                <i class="bi bi-clipboard"></i>
-                            </button>
-                        </div>
-                        <p class="text-muted small">Copiez mon email et contactez-moi directement</p>
-                    </div>
-                </div>
-                
-                <!-- Téléphone -->
-                <div class="col-md-6">
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="bi bi-telephone"></i>
-                        </div>
-                        <h4>Téléphone</h4>
-                        <p class="text-muted">Pour discuter de votre projet</p>
-                        <div class="contact-info">
-                            +1 (418) 570-3956
-                            <button class="copy-btn" onclick="copyToClipboard('+14185703956')">
-                                <i class="bi bi-clipboard"></i>
-                            </button>
-                        </div>
-                        <p class="text-muted small">Copiez mon numéro et appelez-moi</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Motivation -->
-    <section class="py-5">
-        <div class="container">
-            <div class="motivation-section">
-                <div class="row align-items-center">
-                    <div class="col-lg-8">
-                        <h3 class="mb-3">Pourquoi collaborer avec un jeune diplômé ?</h3>
-                        <p class="mb-0">
-                            J'apporte une fraîcheur d'idées, une forte motivation d'apprendre et une approche moderne des technologies web. 
-                            Mes connaissances sont à jour et je suis très flexible pour m'adapter à vos besoins.
-                        </p>
-                    </div>
-                    <div class="col-lg-4 text-lg-end">
-                        <a href="projets.html" class="btn btn-outline-primary btn-lg mt-3 mt-lg-0">
-                            Voir mes projets
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/elrhalia-n-a4a952394/" class="text-white me-3"
+                            target="_blank" aria-label="LinkedIn">
+                            <i class="bi bi-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://github.com/elrhalianoussairi" class="text-white" target="_blank"
+                            aria-label="GitHub">
+                            <i class="bi bi-github"></i> GitHub
                         </a>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Section Disponibilité -->
-    <section class="py-5 bg-light">
-        <div class="container text-center">
-            <h3 class="mb-3">Disponible pour collaboration</h3>
-            <p class="lead mb-4">Stages, projets freelance et opportunités professionnelles</p>
-            <div class="contact-card d-inline-block">
-                <h5>Contact rapide</h5>
-                <p class="text-muted">Copiez mes coordonnées ci-dessus et contactez-moi par votre méthode préférée</p>
-                <div class="mt-3">
-                    <span class="badge bg-primary me-2">Email</span>
-                    <span class="badge bg-success me-2">Téléphone</span>
-                    <span class="badge bg-info">WhatsApp</span>
+                <div class="col-lg-3 mb-4">
+                    <h5 class="mb-3">Navigation</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-light text-decoration-none">Accueil</a></li>
+                        <li class="mb-2"><a href="projets.html" class="text-light text-decoration-none">Projets</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-light text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 mb-4">
+                    <h5 class="mb-3">Compétences</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-1">HTML5 / CSS3</li>
+                        <li class="mb-1">JavaScript</li>
+                        <li class="mb-1">Bootstrap</li>
+                        <li class="mb-1">UI/UX Design</li>
+                        <li class="mb-1">Responsive Design</li>
+                        <li class="mb-1">WordPress</li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </section>
 
-   <!-- Footer -->
-<footer class="py-5 bg-dark text-white">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 mb-4">
-                <h5 class="mb-3">Elrhalia Noussairi</h5>
-                <p class="mb-4">Designer & Intégratrice Web diplômée en AEC Design et Intégration. Passionnée par la création d'interfaces modernes, accessibles et centrées sur l'expérience utilisateur. Spécialisée en développement front-end et design UI/UX.</p>
-                
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/elrhalia-n-a4a952394/" class="text-white me-3" target="_blank" aria-label="LinkedIn">
-                        <i class="bi bi-linkedin"></i> LinkedIn
-                    </a>
-                    <a href="https://github.com/elrhalianoussairi" class="text-white" target="_blank" aria-label="GitHub">
-                        <i class="bi bi-github"></i> GitHub
-                    </a>
-                </div>
-            </div>
-            
-            <div class="col-lg-3 mb-4">
-                <h5 class="mb-3">Navigation</h5>
-                <ul class="list-unstyled">
-                    <li class="mb-2"><a href="index.html" class="text-light text-decoration-none">Accueil</a></li>
-                    <li class="mb-2"><a href="projets.html" class="text-light text-decoration-none">Projets</a></li>
-                    <li class="mb-2"><a href="contact.html" class="text-light text-decoration-none">Contact</a></li>
-                </ul>
-            </div>
-            
-            <div class="col-lg-3 mb-4">
-                <h5 class="mb-3">Compétences</h5>
-                <ul class="list-unstyled">
-                    <li class="mb-1">HTML5 / CSS3</li>
-                    <li class="mb-1">JavaScript</li>
-                    <li class="mb-1">Bootstrap</li>
-                    <li class="mb-1">UI/UX Design</li>
-                    <li class="mb-1">Responsive Design</li>
-                    <li class="mb-1">WordPress</li>
-                </ul>
+            <hr class="my-4">
+
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 — Elrhalia Noussairi | Portfolio officiel</p>
             </div>
         </div>
-        
-        <hr class="my-4">
-        
-        <div class="text-center">
-            <p class="mb-0">&copy; 2025 Elrhalia Noussairi | Diplômée AEC Design et Intégration Web</p>
-        </div>
-    </div>
-</footer>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-   
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(function () {
+                // Créer un toast/notification
+                const toast = document.createElement('div');
+                toast.className = 'position-fixed top-0 end-0 p-3';
+                toast.style.zIndex = '1050';
+                toast.innerHTML = `
+                    <div class="toast show" role="alert">
+                        <div class="toast-header bg-primary text-white">
+                            <strong class="me-auto">Copié !</strong>
+                            <button type="button" class="btn-close btn-close-white" onclick="this.parentElement.parentElement.remove()"></button>
+                        </div>
+                        <div class="toast-body">
+                            ${text} a été copié dans le presse-papier
+                        </div>
+                    </div>
+                `;
+                document.body.appendChild(toast);
+
+                // Retirer automatiquement après 3 secondes
+                setTimeout(() => {
+                    if (toast.parentNode) {
+                        toast.parentNode.removeChild(toast);
+                    }
+                }, 3000);
+
+            }).catch(function (err) {
+                console.error('Erreur lors de la copie : ', err);
+                alert('Erreur lors de la copie : ' + err);
+            });
+        }
+    </script>
+    <script>
+    // Détecter la page courante et activer le lien correspondant
+    document.addEventListener('DOMContentLoaded', function() {
+        const currentPage = window.location.pathname.split('/').pop();
+        const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+        
+        navLinks.forEach(link => {
+            const linkPage = link.getAttribute('href');
+            
+            if (currentPage === linkPage || 
+                (currentPage === '' && linkPage === 'index.html') ||
+                (currentPage === linkPage.replace('.html', ''))) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    });
+</script>
+<script src="https://cdn.counter.dev/script.js" data-id="589c5763-0e85-46d5-a5b1-9b9759560282" data-utcoffset="-5"></script>
 </body>
 
 </html>

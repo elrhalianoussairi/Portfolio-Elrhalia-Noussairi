@@ -180,27 +180,53 @@
 
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">
-                <i class="bi bi-code-slash me-2"></i>
-                Elrhalia Noussairi
-            </a>
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+            
+            <!-- LOGO ANIMÉ -->
+            <span class="logo">
+                <svg width="42" height="42" viewBox="0 0 100 100" fill="none"
+                     xmlns="http://www.w3.org/2000/svg" class="logo-svg">
+                    <defs>
+                        <linearGradient id="gradEN" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#6a5af9"/>
+                            <stop offset="100%" stop-color="#b372f4"/>
+                        </linearGradient>
+                    </defs>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+                    <!-- Cercle animé -->
+                    <circle cx="50" cy="50" r="40" stroke="url(#gradEN)" stroke-width="6"
+                            stroke-linecap="round" class="ring"/>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="index.html">Accueil</a></li>
-                    <li class="nav-item"><a class="nav-link" href="projets.html">Mes Projets</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                </ul>
-            </div>
+                    <!-- Initiales EN -->
+                    <text x="50%" y="55%" text-anchor="middle" fill="white"
+                          font-size="38" font-family="Poppins, sans-serif"
+                          font-weight="700" letter-spacing="2">
+                        EN
+                    </text>
+                </svg>
+            </span>
+
+            <!-- Nom -->
+            Elrhalia Noussairi
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" href="index.html">Accueil</a></li>
+                <li class="nav-item"><a class="nav-link" href="projets.html">Mes Projets</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
+
 
     <!-- Hero Section -->
     <section class="hero-section">
@@ -224,75 +250,84 @@
         </div>
     </section>
 
-    <!-- Section Compétences -->
-    <section class="py-5">
-        <div class="container">
-            <div class="row mb-5">
-                <div class="col-lg-8 mx-auto text-center">
-                    <h2 class="display-5 fw-bold mb-3">Compétences Maîtrisées</h2>
-                    <p class="lead">Durant ma formation AEC, j'ai acquis une solide base en développement web front-end
+   <!-- Section Compétences -->
+<section class="py-5">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="display-5 fw-bold mb-3">Compétences Maîtrisées</h2>
+                <p class="lead">Durant ma formation AEC, j'ai acquis une solide base en développement web front-end et CMS</p>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="bi bi-filetype-html"></i>
+                    </div>
+                    <h4>HTML5 & CSS3</h4>
+                    <p class="text-muted">Maîtrise des balises sémantiques, Flexbox, Grid, animations CSS et design
+                        responsive.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="bi bi-bootstrap"></i>
+                    </div>
+                    <h4>Bootstrap 5</h4>
+                    <p class="text-muted">Création d'interfaces modernes et responsives avec le framework Bootstrap.
                     </p>
                 </div>
             </div>
 
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="bi bi-filetype-html"></i>
-                        </div>
-                        <h4>HTML5 & CSS3</h4>
-                        <p class="text-muted">Maîtrise des balises sémantiques, Flexbox, Grid, animations CSS et design
-                            responsive.</p>
+            <div class="col-md-4">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="bi bi-wordpress"></i>
                     </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="bi bi-bootstrap"></i>
-                        </div>
-                        <h4>Bootstrap 5</h4>
-                        <p class="text-muted">Création d'interfaces modernes et responsives avec le framework Bootstrap.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="bi bi-filetype-js"></i>
-                        </div>
-                        <h4>JavaScript</h4>
-                        <p class="text-muted">Bases solides en JS vanilla pour créer des interactions dynamiques.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row g-4 mt-2">
-                <div class="col-md-6">
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="bi bi-palette"></i>
-                        </div>
-                        <h4>UI/UX Design</h4>
-                        <p class="text-muted">Conception d'interfaces utilisateur intuitives et expériences optimisées.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="bi bi-phone"></i>
-                        </div>
-                        <h4>Responsive Design</h4>
-                        <p class="text-muted">Sites adaptatifs qui fonctionnent parfaitement sur tous les appareils.</p>
-                    </div>
+                    <h4>WordPress</h4>
+                    <p class="text-muted">Développement de sites avec WordPress, création de thèmes et plugins personnalisés.</p>
                 </div>
             </div>
         </div>
-    </section>
+
+        <div class="row g-4 mt-2">
+            <div class="col-md-4">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="bi bi-filetype-js"></i>
+                    </div>
+                    <h4>JavaScript</h4>
+                    <p class="text-muted">Bases solides en JS vanilla pour créer des interactions dynamiques.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="bi bi-palette"></i>
+                    </div>
+                    <h4>UI/UX Design</h4>
+                    <p class="text-muted">Conception d'interfaces utilisateur intuitives et expériences optimisées.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="bi bi-phone"></i>
+                    </div>
+                    <h4>Responsive Design</h4>
+                    <p class="text-muted">Sites adaptatifs qui fonctionnent parfaitement sur tous les appareils.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Section Projets Récents -->
     <section class="py-5 bg-light">
@@ -305,32 +340,32 @@
             </div>
 
             <div class="row g-4">
-                <!-- Projet Figma 1 -->
-                <div class="col-md-4">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <i class="bi bi-palette"></i>
-                        </div>
-                        <div class="p-4">
-                            <span class="badge bg-warning mb-2">Figma</span>
-                            <h5>Zoo Falardeau</h5>
-                            <p class="text-muted">Design d'interface moderne pour le site web du Zoo Falardeau avec
-                                prototypage interactif.</p>
-                            <div class="mb-3">
-                                <span class="tech-badge">Figma</span>
-                                <span class="tech-badge">UI Design</span>
-                                <span class="tech-badge">Prototypage</span>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <button
-                                    onclick="window.open('https://www.figma.com/proto/gcmabUgxaSuXwFBgnZq0hX/Zoo-Falardeau?node-id=73-30&starting-point-node-id=73%3A30&t=fLbEwAbsBZ8frajU-1', '_blank')"
-                                    class="btn btn-primary btn-sm">
-                                    <i class="bi bi-box-arrow-up-right me-1"></i>Voir le projet
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+               <!-- Projet Figma 1 -->
+<div class="col-md-4">
+    <div class="project-card">
+        <div class="project-image">
+            <i class="bi bi-palette"></i>
+        </div>
+        <div class="p-4">
+            <span class="badge bg-warning mb-2">Figma</span>
+            <h5>Refonte Maison Mère</h5>
+            <p class="text-muted">Refonte complète de l'interface du site Maison Mère avec
+                                amélioration de l'expérience utilisateur.</p>
+            <div class="mb-3">
+                <span class="tech-badge">Figma</span>
+                <span class="tech-badge">UI Design</span>
+                <span class="tech-badge">Prototypage</span>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+                <button
+                    onclick="window.open('https://www.figma.com/proto/AsuWNTsrwV9bUZIMkOllij/Design-site--Maison-M%C3%A8re?node-id=1-4&t=2CJbor8sgAz1BFHA-1', '_blank')"
+                    class="btn btn-primary btn-sm">
+                    <i class="bi bi-box-arrow-up-right me-1"></i>Voir le projet
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
 
                 <!-- Projet HTML/CSS 1 -->
                 <div class="col-md-4">
@@ -436,89 +471,6 @@
             </div>
         </div>
     </section>
-        <!-- Compteur de Visites -->
-    <section class="py-4 bg-light">
-        <div class="container text-center">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <h4 class="mb-3">📊 Statistiques du Portfolio</h4>
-                    <div class="row">
-                        <div class="col-md-4 mb-3">
-                            <div class="card border-0 shadow-sm">
-                                <div class="card-body">
-                                    <i class="bi bi-eye display-6 text-primary mb-2"></i>
-                                    <h5 id="totalVisits">0</h5>
-                                    <p class="text-muted mb-0">Visites totales</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                            <div class="card border-0 shadow-sm">
-                                <div class="card-body">
-                                    <i class="bi bi-person display-6 text-success mb-2"></i>
-                                    <h5 id="uniqueVisitors">0</h5>
-                                    <p class="text-muted mb-0">Visiteurs uniques</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                            <div class="card border-0 shadow-sm">
-                                <div class="card-body">
-                                    <i class="bi bi-clock display-6 text-info mb-2"></i>
-                                    <h5 id="currentVisitors">0</h5>
-                                    <p class="text-muted mb-0">Visites aujourd'hui</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                   
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <script>
-        // Compteur de visites avancé
-        function updateVisitStats() {
-            // Initialiser les données si elles n'existent pas
-            let stats = JSON.parse(localStorage.getItem('portfolioStats') || '{}');
-            
-            // Date actuelle
-            const today = new Date().toDateString();
-            
-            // Initialiser les compteurs
-            if (!stats.totalVisits) stats.totalVisits = 0;
-            if (!stats.uniqueVisitors) stats.uniqueVisitors = 0;
-            if (!stats.dailyVisits) stats.dailyVisits = {};
-            if (!stats.lastVisit) stats.lastVisit = '';
-            
-            // Vérifier si c'est un nouveau visiteur
-            let visitorId = localStorage.getItem('visitorId');
-            if (!visitorId) {
-                visitorId = 'visitor_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
-                localStorage.setItem('visitorId', visitorId);
-                stats.uniqueVisitors++;
-            }
-            
-            // Incrémenter les compteurs
-            stats.totalVisits++;
-            stats.dailyVisits[today] = (stats.dailyVisits[today] || 0) + 1;
-            stats.lastVisit = new Date().toLocaleString('fr-FR');
-            
-            // Sauvegarder les statistiques
-            localStorage.setItem('portfolioStats', JSON.stringify(stats));
-            
-            // Mettre à jour l'affichage
-            document.getElementById('totalVisits').textContent = stats.totalVisits.toLocaleString();
-            document.getElementById('uniqueVisitors').textContent = stats.uniqueVisitors.toLocaleString();
-            document.getElementById('currentVisitors').textContent = stats.dailyVisits[today].toLocaleString();
-        }
-        
-        // Mettre à jour les statistiques au chargement de la page
-        document.addEventListener('DOMContentLoaded', updateVisitStats);
-    </script>
-
-   
 
  <!-- Footer -->
 <footer class="py-5 bg-dark text-white">
@@ -526,7 +478,7 @@
         <div class="row">
             <div class="col-lg-6 mb-4">
                 <h5 class="mb-3">Elrhalia Noussairi</h5>
-                <p class="mb-4">Designer & Intégratrice Web diplômée en AEC Design et Intégration. Passionnée par la création d'interfaces modernes, accessibles et centrées sur l'expérience utilisateur. Spécialisée en développement front-end et design UI/UX.</p>
+                <p class="mb-4">Designer & intégratrice web spécialisée en UI/UX et développement front-end. Je crée des interfaces modernes, accessibles et centrées sur l’expérience utilisateur.</p>
                 
                 <div class="social-links">
                     <a href="https://www.linkedin.com/in/elrhalia-n-a4a952394/" class="text-white me-3" target="_blank" aria-label="LinkedIn">
@@ -563,12 +515,31 @@
         <hr class="my-4">
         
         <div class="text-center">
-            <p class="mb-0">&copy; 2025 Elrhalia Noussairi | Diplômée AEC Design et Intégration Web</p>
+            <p class="mb-0">&copy; 2025 — Elrhalia Noussairi | Portfolio officiel</p>
         </div>
     </div>
 </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
+<script>
+    // Détecter la page courante et activer le lien correspondant
+    document.addEventListener('DOMContentLoaded', function() {
+        const currentPage = window.location.pathname.split('/').pop();
+        const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+        
+        navLinks.forEach(link => {
+            const linkPage = link.getAttribute('href');
+            
+            if (currentPage === linkPage || 
+                (currentPage === '' && linkPage === 'index.html') ||
+                (currentPage === linkPage.replace('.html', ''))) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    });
+</script>
+<script src="https://cdn.counter.dev/script.js" data-id="589c5763-0e85-46d5-a5b1-9b9759560282" data-utcoffset="-5"></script>
 </body>
 
 </html>

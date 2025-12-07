@@ -11,12 +11,13 @@
     <!-- Bootstrap & Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-      <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="images/favicon.png">
     <style>
         :root {
             --primary-color: #00a2ff;
             --primary-dark: #0088cc;
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
 
         body {
@@ -26,15 +27,72 @@
         }
 
         .navbar {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--gradient);
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
-        .projects-hero {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
-            padding: 4rem 0;
+        /* Même hero que index et contact */
+        .hero-section {
+            background: var(--gradient);
+            color: white;
+            padding: 6rem 0;
+            position: relative;
+            overflow: hidden;
         }
 
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: rotate-bg 20s linear infinite;
+        }
+
+        @keyframes rotate-bg {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .badge-new {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .hero-buttons .btn {
+            border-radius: 0.75rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .hero-buttons .btn-light {
+            background: white;
+            color: var(--primary-color);
+        }
+
+        .hero-buttons .btn-light:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-buttons .btn-outline-light:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Styles pour les projets */
         .project-card {
             background: white;
             border-radius: 1rem;
@@ -83,15 +141,12 @@
             padding: 0.75rem 2rem;
             border-radius: 0.75rem;
             font-weight: 600;
+            transition: all 0.3s ease;
         }
 
         .btn-primary:hover {
             background: var(--primary-dark);
-        }
-
-        .filter-btn.active {
-            background: var(--primary-color);
-            color: white;
+            transform: translateY(-2px);
         }
 
         .category-section {
@@ -131,6 +186,14 @@
             color: white;
             transform: translateY(-2px);
         }
+
+        /* Section CTA */
+        .cta-section {
+            background: var(--gradient);
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
     </style>
 </head>
 
@@ -139,8 +202,32 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">
-                <i class="bi bi-code-slash me-2"></i>
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+
+                <!-- LOGO ANIMÉ -->
+                <span class="logo">
+                    <svg width="42" height="42" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        class="logo-svg">
+                        <defs>
+                            <linearGradient id="gradEN" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#6a5af9" />
+                                <stop offset="100%" stop-color="#b372f4" />
+                            </linearGradient>
+                        </defs>
+
+                        <!-- Cercle animé -->
+                        <circle cx="50" cy="50" r="40" stroke="url(#gradEN)" stroke-width="6" stroke-linecap="round"
+                            class="ring" />
+
+                        <!-- Initiales EN -->
+                        <text x="50%" y="55%" text-anchor="middle" fill="white" font-size="38"
+                            font-family="Poppins, sans-serif" font-weight="700" letter-spacing="2">
+                            EN
+                        </text>
+                    </svg>
+                </span>
+
+                <!-- Nom -->
                 Elrhalia Noussairi
             </a>
 
@@ -150,119 +237,29 @@
 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="projets.html">Mes Projets</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projets.html">Mes Projets</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section Projets -->
-    <section class="projects-hero">
-        <div class="container">
-            <div class="row">
+    <!-- Hero Section - Même que index et contact -->
+    <section class="hero-section">
+        <div class="container position-relative">
+            <div class="row align-items-center">
                 <div class="col-lg-8 mx-auto text-center">
-                    <span class="badge bg-primary mb-3">Projets de Formation AEC</span>
-                    <h1 class="display-5 fw-bold mb-4">Mes Réalisations</h1>
-                    <p class="lead">Découvrez les projets que j'ai développés durant ma formation en Design et
+                    <span class="badge-new mb-3">Jeune Diplômé AEC Design & Intégration Web</span>
+                    <h1 class="display-4 fw-bold mb-4">Mes Réalisations</h1>
+                    <p class="lead mb-4">Découvrez les projets que j'ai développés durant ma formation en Design et
                         Intégration Web</p>
+
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Projets Figma -->
-    <section class="py-5 category-section">
-        <div class="container">
-            <h2 class="category-title">Design UI/UX avec Figma</h2>
-            <div class="row g-4">
-                <!-- Projet Figma 1 - ZOO FALARDEAU -->
-                <div class="col-lg-4">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <i class="bi bi-palette"></i>
-                            <span class="project-badge badge bg-warning">Figma</span>
-                        </div>
-                        <div class="p-4">
-                            <h5>Site Zoo Falardeau</h5>
-                            <p class="text-muted mb-3">Design d'interface moderne pour le site web du Zoo Falardeau</p>
-                            <div class="mb-3">
-                                <span class="tech-badge">Figma</span>
-                                <span class="tech-badge">UI Design</span>
-                                <span class="tech-badge">Prototypage</span>
-                                <span class="tech-badge">Design System</span>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <button
-                                    onclick="window.open('https://www.figma.com/proto/gcmabUgxaSuXwFBgnZq0hX/Zoo-Falardeau?node-id=73-30&starting-point-node-id=73%3A30&t=fLbEwAbsBZ8frajU-1', '_blank')"
-                                    class="btn btn-primary btn-sm">
-                                    <i class="bi bi-box-arrow-up-right me-1"></i>Voir le projet
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Projet Figma 2 - MAISON MERE -->
-                <div class="col-lg-4">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <i class="bi bi-house"></i>
-                            <span class="project-badge badge bg-warning">Figma</span>
-                        </div>
-                        <div class="p-4">
-                            <h5>Refonte Maison Mère</h5>
-                            <p class="text-muted mb-3">Refonte complète de l'interface du site Maison Mère avec
-                                amélioration de l'expérience utilisateur.</p>
-                            <div class="mb-3">
-                                <span class="tech-badge">Figma</span>
-                                <span class="tech-badge">UX Research</span>
-                                <span class="tech-badge">Wireframes</span>
-                                <span class="tech-badge">User Testing</span>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <button
-                                    onclick="window.open('https://www.figma.com/proto/AsuWNTsrwV9bUZIMkOllij/Design-site--Maison-M%C3%A8re?node-id=1-4&t=2CJbor8sgAz1BFHA-1', '_blank')"
-                                    class="btn btn-primary btn-sm">
-                                    <i class="bi bi-box-arrow-up-right me-1"></i>Voir le projet
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Projet Figma 3 - SITE WABASSO -->
-                <div class="col-lg-4">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <i class="bi bi-building"></i>
-                            <span class="project-badge badge bg-warning">Figma</span>
-                        </div>
-                        <div class="p-4">
-                            <h5>Site Wabasso</h5>
-                            <p class="text-muted mb-3">Design d'interface corporate moderne pour le site web de Wabasso
-                                avec système de design complet.</p>
-                            <div class="mb-3">
-                                <span class="tech-badge">Figma</span>
-                                <span class="tech-badge">UI Design</span>
-                                <span class="tech-badge">Design System</span>
-                                <span class="tech-badge">Wireframes</span>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <button
-                                    onclick="window.open('https://www.figma.com/proto/PVqUHp79dbFCeAXMVN7DEX/Site-Wabasso--copie-?node-id=2-2&p=f&t=tkLr2Z1gHX6ymaPS-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2%3A2', '_blank')"
-                                    class="btn btn-primary btn-sm">
-                                    <i class="bi bi-box-arrow-up-right me-1"></i>Voir le projet
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
-
     <!-- Projets HTML/CSS/Bootstrap -->
     <section class="py-5 category-section">
         <div class="container">
@@ -350,7 +347,6 @@
             </div>
         </div>
     </section>
-
     <!-- Projets WordPress/PHP -->
     <section class="py-5 category-section">
         <div class="container">
@@ -415,72 +411,190 @@
         </div>
     </section>
 
+
+    <!-- Projets Figma -->
+    <section class="py-5 category-section" id="projets-figma">
+        <div class="container">
+            <h2 class="category-title">Design UI/UX avec Figma</h2>
+            <div class="row g-4">
+                <!-- Projet Figma 1 - SITE WABASSO -->
+                <div class="col-lg-4">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="bi bi-building"></i>
+                            <span class="project-badge badge bg-warning">Figma</span>
+                        </div>
+                        <div class="p-4">
+                            <h5>Refonte Site Wabasso</h5>
+                            <p class="text-muted mb-3">J'ai réalisé la page d'accueil sous forme de maquette
+                                fonctionnelle, sans prototype initial. Le travail comprend la structure complète, les
+                                visuels, l'interface finale et l'intégration du design.</p>
+                            <div class="mb-3">
+                                <span class="tech-badge">Figma</span>
+                                <span class="tech-badge">UI Design</span>
+                                <span class="tech-badge">Design System</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button
+                                    onclick="window.open('https://www.figma.com/proto/MCoSc0UHSjZiQVvlxnyWvV/Refonte-page-accueil-Site-Wabasso?node-id=1-85&t=MGQHiq58v84CP8lZ-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1')"
+                                    class="btn btn-primary btn-sm">
+                                    <i class="bi bi-box-arrow-up-right me-1"></i>Voir le projet
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Projet Figma 2 - MAISON MERE -->
+                <div class="col-lg-4">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="bi bi-house"></i>
+                            <span class="project-badge badge bg-warning">Figma</span>
+                        </div>
+                        <div class="p-4">
+                            <h5>Refonte Maison Mère</h5>
+                            <p class="text-muted mb-3">Refonte complète de l'interface du site Maison Mère avec
+                                amélioration de l'expérience utilisateur. J'ai conçu une nouvelle interface moderne avec
+                                prototypage pour une navigation optimale.</p>
+                            <div class="mb-3">
+                                <span class="tech-badge">Figma</span>
+                                <span class="tech-badge">Wireframes</span>
+                                <span class="tech-badge">User Testing</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button
+                                    onclick="window.open('https://www.figma.com/proto/AsuWNTsrwV9bUZIMkOllij/Design-site--Maison-M%C3%A8re?node-id=1-4&t=2CJbor8sgAz1BFHA-1', '_blank')"
+                                    class="btn btn-primary btn-sm">
+                                    <i class="bi bi-box-arrow-up-right me-1"></i>Voir le projet
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Projet Figma 3 - ZOO FALARDEAU -->
+                <div class="col-lg-4">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="bi bi-palette"></i>
+                            <span class="project-badge badge bg-warning">Figma</span>
+                        </div>
+                        <div class="p-4">
+                            <h5>Site Zoo Falardeau</h5>
+                            <p class="text-muted mb-3">Conception de la page des activités et événements sous forme de
+                                maquette fonctionnelle avec prototypage interactif et design d'interface optimisé.</p>
+                            <div class="mb-3">
+                                <span class="tech-badge">Figma</span>
+                                <span class="tech-badge">UI Design</span>
+                                <span class="tech-badge">Prototypage</span>
+                                <span class="tech-badge">Wireframes</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button
+                                    onclick="window.open('https://www.figma.com/proto/evcz52XiIVd6ounHR4g2jY/Sans-titre?node-id=1-56&t=RW9e1f8SMTAIqyPS-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1', '_blank')"
+                                    class="btn btn-primary btn-sm">
+                                    <i class="bi bi-box-arrow-up-right me-1"></i>Voir le projet
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <!-- Section Appel à l'action -->
-    <section class="py-5 bg-primary text-white">
+    <section class="cta-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
-                    <h2 class="display-6 fw-bold mb-4">Intéressé par mon travail ?</h2>
+                    <h2 class="display-5 fw-bold mb-4">Intéressé par mon travail ?</h2>
                     <p class="lead mb-4">Je suis disponible pour discuter de vos projets, stages ou collaborations.</p>
-                    <a href="contact.html" class="btn btn-light btn-lg">
+                    <a href="contact.html" class="btn btn-light btn-lg me-3">
                         <i class="bi bi-chat-dots me-2"></i>Contactez-moi
+                    </a>
+                    <a href="index.html" class="btn btn-outline-light btn-lg">
+                        <i class="bi bi-house me-2"></i>Retour à l'accueil
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-   <!-- Footer -->
-<footer class="py-5 bg-dark text-white">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 mb-4">
-                <h5 class="mb-3">Elrhalia Noussairi</h5>
-                <p class="mb-4">Designer & Intégratrice Web diplômée en AEC Design et Intégration. Passionnée par la création d'interfaces modernes, accessibles et centrées sur l'expérience utilisateur. Spécialisée en développement front-end et design UI/UX.</p>
-                
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/elrhalia-n-a4a952394/" class="text-white me-3" target="_blank" aria-label="LinkedIn">
-                        <i class="bi bi-linkedin"></i> LinkedIn
-                    </a>
-                    <a href="https://github.com/elrhalianoussairi" class="text-white" target="_blank" aria-label="GitHub">
-                        <i class="bi bi-github"></i> GitHub
-                    </a>
+    <!-- Footer -->
+    <footer class="py-5 bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <h5 class="mb-3">Elrhalia Noussairi</h5>
+                    <p class="mb-4">Designer & intégratrice web spécialisée en UI/UX et développement front-end. Je crée
+                        des interfaces modernes, accessibles et centrées sur l'expérience utilisateur.</p>
+
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/elrhalia-n-a4a952394/" class="text-white me-3"
+                            target="_blank" aria-label="LinkedIn">
+                            <i class="bi bi-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://github.com/elrhalianoussairi" class="text-white" target="_blank"
+                            aria-label="GitHub">
+                            <i class="bi bi-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 mb-4">
+                    <h5 class="mb-3">Navigation</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-light text-decoration-none">Accueil</a></li>
+                        <li class="mb-2"><a href="projets.html" class="text-light text-decoration-none">Projets</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-light text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 mb-4">
+                    <h5 class="mb-3">Compétences</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-1">HTML5 / CSS3</li>
+                        <li class="mb-1">JavaScript</li>
+                        <li class="mb-1">Bootstrap</li>
+                        <li class="mb-1">UI/UX Design</li>
+                        <li class="mb-1">Responsive Design</li>
+                        <li class="mb-1">WordPress</li>
+                    </ul>
                 </div>
             </div>
-            
-            <div class="col-lg-3 mb-4">
-                <h5 class="mb-3">Navigation</h5>
-                <ul class="list-unstyled">
-                    <li class="mb-2"><a href="index.html" class="text-light text-decoration-none">Accueil</a></li>
-                    <li class="mb-2"><a href="projets.html" class="text-light text-decoration-none">Projets</a></li>
-                    <li class="mb-2"><a href="contact.html" class="text-light text-decoration-none">Contact</a></li>
-                </ul>
-            </div>
-            
-            <div class="col-lg-3 mb-4">
-                <h5 class="mb-3">Compétences</h5>
-                <ul class="list-unstyled">
-                    <li class="mb-1">HTML5 / CSS3</li>
-                    <li class="mb-1">JavaScript</li>
-                    <li class="mb-1">Bootstrap</li>
-                    <li class="mb-1">UI/UX Design</li>
-                    <li class="mb-1">Responsive Design</li>
-                    <li class="mb-1">WordPress</li>
-                </ul>
+
+            <hr class="my-4">
+
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 — Elrhalia Noussairi | Portfolio officiel</p>
             </div>
         </div>
-        
-        <hr class="my-4">
-        
-        <div class="text-center">
-            <p class="mb-0">&copy; 2025 Elrhalia Noussairi | Diplômée AEC Design et Intégration Web</p>
-        </div>
-    </div>
-</footer>
+    </footer>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Détecter la page courante et activer le lien correspondant
+        document.addEventListener('DOMContentLoaded', function () {
+            const currentPage = window.location.pathname.split('/').pop();
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
 
+            navLinks.forEach(link => {
+                const linkPage = link.getAttribute('href');
+
+                if (currentPage === linkPage ||
+                    (currentPage === '' && linkPage === 'index.html') ||
+                    (currentPage === linkPage.replace('.html', ''))) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        });
+    </script>
+    <script src="https://cdn.counter.dev/script.js" data-id="589c5763-0e85-46d5-a5b1-9b9759560282"
+        data-utcoffset="-5"></script>
 </body>
 
 </html>
