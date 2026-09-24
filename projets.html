@@ -42,7 +42,6 @@
             line-height: 1.65;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
 
         /* ===== NAV ===== */
@@ -60,7 +59,6 @@
             font-family: var(--font-display);
             font-weight: 500;
             font-size: 1.05rem;
-            letter-spacing: -0.01em;
             text-decoration: none;
             color: var(--ink);
             display: flex; align-items: center; gap: 10px;
@@ -77,8 +75,6 @@
             color: var(--muted);
             text-decoration: none;
             font-size: 0.85rem;
-            font-weight: 400;
-            letter-spacing: 0.02em;
             transition: color 0.25s;
             position: relative;
         }
@@ -103,7 +99,6 @@
         .nav-cta:hover {
             background: var(--accent);
             color: var(--bg) !important;
-            border-color: var(--accent);
         }
 
         /* ===== PAGE HEADER ===== */
@@ -136,7 +131,6 @@
             z-index: 1;
         }
         .section-label {
-            font-family: var(--font-body);
             font-size: 0.7rem;
             letter-spacing: 0.22em;
             text-transform: uppercase;
@@ -159,11 +153,7 @@
             color: var(--ink);
             margin-bottom: 1.75rem;
         }
-        .page-title em {
-            font-style: italic;
-            color: var(--accent);
-            font-weight: 400;
-        }
+        .page-title em { font-style: italic; color: var(--accent); }
         .page-subtitle {
             color: var(--ink-soft);
             max-width: 540px;
@@ -171,7 +161,7 @@
             line-height: 1.7;
         }
 
-        /* ===== FEATURED PROJECT ===== */
+        /* ===== FEATURED CLIENT PROJECTS ===== */
         .featured-section {
             padding: 5.5rem 3rem;
             background: var(--surface);
@@ -182,108 +172,160 @@
         .featured-eyebrow {
             display: inline-flex; align-items: center; gap: 10px;
             color: var(--accent);
-            font-size: 0.75rem;
-            letter-spacing: 0.18em;
+            font-size: 0.72rem;
+            letter-spacing: 0.2em;
             text-transform: uppercase;
             font-weight: 500;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
         }
-        .featured-eyebrow span {
-            display: inline-block;
-            width: 6px; height: 6px;
+        .featured-eyebrow::before {
+            content: '';
+            width: 28px; height: 1px;
             background: var(--accent);
-            border-radius: 50%;
-            animation: pulse 2.4s ease-in-out infinite;
         }
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.35; transform: scale(0.85); }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
         }
 
         .featured-card {
             display: grid;
-            grid-template-columns: 1.1fr 1fr;
+            grid-template-columns: 1.15fr 1fr;
             gap: 0;
             background: var(--bg);
             border: 1px solid var(--border);
-            border-radius: 20px;
+            border-radius: 22px;
             overflow: hidden;
-            transition: border-color 0.3s, box-shadow 0.3s;
+            transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
         }
         .featured-card:hover {
             border-color: var(--border-strong);
-            box-shadow: 0 24px 60px -30px rgba(139, 58, 98, 0.25);
+            box-shadow: 0 28px 70px -35px rgba(139, 58, 98, 0.32);
+            transform: translateY(-3px);
+        }
+        .featured-card.reverse {
+            grid-template-columns: 1fr 1.15fr;
+        }
+        .featured-card.reverse .featured-visual {
+            order: 2;
+        }
+        .featured-card.reverse .featured-content {
+            order: 1;
         }
 
+        /* Visual container */
         .featured-visual {
             position: relative;
             background:
-                radial-gradient(circle at 30% 30%, rgba(217, 174, 164, 0.4) 0%, transparent 55%),
-                radial-gradient(circle at 75% 70%, rgba(139, 58, 98, 0.18) 0%, transparent 60%),
+                radial-gradient(circle at 25% 25%, rgba(217, 174, 164, 0.35) 0%, transparent 55%),
+                radial-gradient(circle at 80% 75%, rgba(139, 58, 98, 0.12) 0%, transparent 60%),
                 var(--surface-alt);
-            min-height: 460px;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 3rem;
+            padding: 3rem 2.5rem 4rem;
             overflow: hidden;
+            min-height: 480px;
         }
-        .featured-visual::before {
-            content: '';
-            position: absolute; inset: 0;
-            background-image:
-                linear-gradient(rgba(139, 58, 98, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(139, 58, 98, 0.05) 1px, transparent 1px);
-            background-size: 48px 48px;
-            opacity: 0.6;
-        }
-        .featured-monogram {
+
+        /* ===== BROWSER FRAME ===== */
+        .browser-frame {
+            width: 100%;
+            max-width: 460px;
+            background: var(--surface);
+            border-radius: 10px 10px 6px 6px;
+            overflow: hidden;
+            box-shadow:
+                0 32px 60px -28px rgba(43, 30, 39, 0.30),
+                0 12px 24px -14px rgba(43, 30, 39, 0.18);
             position: relative;
             z-index: 1;
-            font-family: var(--font-display);
-            font-size: 9rem;
-            font-style: italic;
-            font-weight: 400;
-            color: var(--accent);
-            line-height: 1;
-            letter-spacing: -0.04em;
-            text-align: center;
-            text-shadow: 0 4px 40px rgba(139, 58, 98, 0.15);
         }
-        .featured-monogram small {
-            display: block;
-            font-family: var(--font-body);
-            font-style: normal;
-            font-size: 0.7rem;
-            letter-spacing: 0.35em;
-            color: var(--accent);
-            text-transform: uppercase;
-            margin-top: 1rem;
-            font-weight: 500;
+        .browser-bar {
+            background: #EDE7E2;
+            padding: 0.6rem 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            border-bottom: 1px solid rgba(43, 30, 39, 0.06);
         }
-
-        .featured-live {
-            position: absolute; top: 1.5rem; left: 1.5rem;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--border-strong);
-            color: var(--accent);
-            padding: 0.4rem 0.9rem;
-            border-radius: 100px;
-            font-size: 0.7rem;
-            font-weight: 500;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            display: flex; align-items: center; gap: 8px;
+        .browser-dots {
+            display: flex;
+            gap: 6px;
+            flex-shrink: 0;
         }
-        .featured-live::before {
-            content: '';
-            width: 6px; height: 6px;
-            background: #7A9A7C;
+        .browser-dot {
+            width: 10px; height: 10px;
             border-radius: 50%;
-            animation: pulse 2s infinite;
+            background: #D4CCC5;
+        }
+        .browser-dot:nth-child(1) { background: #E5A99A; }
+        .browser-dot:nth-child(2) { background: #EBCE9A; }
+        .browser-dot:nth-child(3) { background: #B5CFAE; }
+        .browser-url {
+            flex: 1;
+            background: var(--bg);
+            border-radius: 100px;
+            padding: 3px 14px;
+            font-size: 0.68rem;
+            color: var(--muted);
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            text-align: center;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .browser-img {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 320px;
+            object-fit: cover;
+            object-position: top;
         }
 
+        /* ===== PHONE FRAME (overlap) ===== */
+        .phone-frame {
+            position: absolute;
+            bottom: 1.75rem;
+            right: 1.75rem;
+            width: 130px;
+            background: #1A1216;
+            border-radius: 20px;
+            padding: 8px 6px;
+            box-shadow:
+                0 20px 40px -14px rgba(43, 30, 39, 0.45),
+                0 6px 16px -6px rgba(43, 30, 39, 0.30);
+            z-index: 3;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .phone-frame::before {
+            content: '';
+            position: absolute;
+            top: 6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 36px;
+            height: 4px;
+            background: #2E262B;
+            border-radius: 100px;
+            z-index: 2;
+        }
+        .phone-frame img {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 260px;
+            object-fit: cover;
+            object-position: top;
+            border-radius: 14px;
+            background: #FFFFFF;
+        }
+
+        /* ===== CONTENT ===== */
         .featured-content {
             padding: 3.5rem 3rem;
             display: flex;
@@ -291,9 +333,8 @@
             justify-content: center;
         }
         .featured-cat {
-            font-family: var(--font-body);
-            font-size: 0.72rem;
-            letter-spacing: 0.18em;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
             text-transform: uppercase;
             color: var(--accent);
             font-weight: 500;
@@ -301,7 +342,7 @@
         }
         .featured-title {
             font-family: var(--font-display);
-            font-size: 2.4rem;
+            font-size: 2.2rem;
             font-weight: 500;
             line-height: 1.1;
             letter-spacing: -0.02em;
@@ -311,7 +352,7 @@
         .featured-title em { font-style: italic; color: var(--accent); }
         .featured-desc {
             color: var(--ink-soft);
-            font-size: 0.98rem;
+            font-size: 0.97rem;
             line-height: 1.75;
             margin-bottom: 1.75rem;
         }
@@ -326,7 +367,6 @@
             padding: 4px 12px;
             border-radius: 100px;
             font-size: 0.72rem;
-            letter-spacing: 0.02em;
             font-weight: 500;
         }
         .btn-featured {
@@ -341,7 +381,6 @@
             text-decoration: none;
             transition: transform 0.25s, background 0.25s, box-shadow 0.25s;
             width: fit-content;
-            letter-spacing: 0.01em;
         }
         .btn-featured:hover {
             background: var(--accent-hover);
@@ -380,12 +419,10 @@
             font-size: 0.85rem;
             font-style: italic;
             color: var(--accent);
-            font-weight: 400;
         }
         .cat-meta {
             font-size: 0.8rem;
             color: var(--muted);
-            letter-spacing: 0.02em;
         }
 
         .projects-grid {
@@ -401,7 +438,7 @@
             border: 1px solid var(--border);
             border-radius: 16px;
             overflow: hidden;
-            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
             display: flex; flex-direction: column;
             text-decoration: none;
             color: inherit;
@@ -429,7 +466,6 @@
             background-size: 32px 32px;
             opacity: 0.5;
         }
-        .proj-visual.wp { background: linear-gradient(135deg, #F5E3DD 0%, #EED4CB 100%); }
         .proj-visual.figma { background: linear-gradient(135deg, #F5E7EE 0%, #EED4E0 100%); }
         .proj-visual.html { background: linear-gradient(135deg, #F0EBE4 0%, #E5DDD3 100%); }
 
@@ -501,13 +537,12 @@
             font-weight: 500;
             margin-top: 1.25rem;
             text-decoration: none;
-            letter-spacing: 0.01em;
             transition: gap 0.25s;
             width: fit-content;
         }
         .proj-card:hover .proj-link { gap: 10px; }
 
-        /* ===== CTA STRIP ===== */
+        /* ===== CTA ===== */
         .cta-section {
             padding: 6rem 3rem;
             background: var(--surface);
@@ -542,10 +577,7 @@
             margin-bottom: 1.25rem;
             color: var(--ink);
         }
-        .cta-title em {
-            font-style: italic;
-            color: var(--accent);
-        }
+        .cta-title em { font-style: italic; color: var(--accent); }
         .cta-sub {
             color: var(--ink-soft);
             font-size: 1rem;
@@ -563,7 +595,6 @@
             font-size: 0.88rem;
             text-decoration: none;
             transition: all 0.25s;
-            letter-spacing: 0.01em;
         }
         .btn-cta:hover {
             background: var(--accent-hover);
@@ -588,9 +619,7 @@
             font-size: 0.95rem;
             font-style: italic;
         }
-        .footer-links {
-            display: flex; gap: 1.75rem; list-style: none;
-        }
+        .footer-links { display: flex; gap: 1.75rem; list-style: none; }
         .footer-links a {
             color: var(--muted);
             text-decoration: none;
@@ -617,7 +646,6 @@
         .copyright {
             color: var(--muted);
             font-size: 0.78rem;
-            letter-spacing: 0.01em;
         }
 
         /* ===== ANIMATIONS ===== */
@@ -632,16 +660,31 @@
         .page-subtitle { animation-delay: 0.16s; }
 
         /* ===== RESPONSIVE ===== */
+        @media (max-width: 1000px) {
+            .phone-frame {
+                width: 110px;
+                bottom: 1.25rem;
+                right: 1.25rem;
+            }
+            .phone-frame img { max-height: 220px; }
+        }
+
         @media (max-width: 900px) {
             nav { padding: 1.1rem 1.5rem; }
             .nav-links { display: none; }
             .page-header { padding: 8rem 1.5rem 4rem; }
             .featured-section { padding: 4rem 1.5rem; }
-            .featured-card { grid-template-columns: 1fr; }
-            .featured-visual { min-height: 280px; padding: 2rem; }
-            .featured-monogram { font-size: 6rem; }
+            .featured-card,
+            .featured-card.reverse { grid-template-columns: 1fr; }
+            .featured-card.reverse .featured-visual { order: 1; }
+            .featured-card.reverse .featured-content { order: 2; }
+            .featured-visual {
+                min-height: 340px;
+                padding: 2.25rem 1.75rem 4rem;
+            }
+            .browser-img { max-height: 240px; }
             .featured-content { padding: 2.25rem 1.75rem; }
-            .featured-title { font-size: 1.75rem; }
+            .featured-title { font-size: 1.6rem; }
             .projects-section { padding: 4rem 1.5rem; }
             .cat-title { font-size: 1.35rem; }
             .cta-section { padding: 4.5rem 1.5rem; }
@@ -650,9 +693,29 @@
         }
 
         @media (max-width: 520px) {
-            .featured-monogram { font-size: 4.5rem; }
-            .featured-monogram small { font-size: 0.6rem; letter-spacing: 0.25em; }
             .page-title { font-size: 2.75rem; }
+            .featured-title { font-size: 1.35rem; }
+            .browser-img { max-height: 180px; }
+            .featured-visual {
+                min-height: 280px;
+                padding: 1.75rem 1.25rem 3.5rem;
+            }
+            .phone-frame {
+                width: 85px;
+                padding: 6px 4px;
+                border-radius: 14px;
+                bottom: 1rem;
+                right: 1rem;
+            }
+            .phone-frame::before {
+                width: 26px;
+                height: 3px;
+                top: 4px;
+            }
+            .phone-frame img {
+                max-height: 160px;
+                border-radius: 10px;
+            }
         }
     </style>
 </head>
@@ -679,94 +742,136 @@
         </h1>
         <p class="page-subtitle">
             Une sélection de sites web, interfaces UI/UX et intégrations front-end
-            réalisés en clientèle réelle et durant ma formation. Chaque projet est
-            mené du concept jusqu'à la mise en production.
+            menées du concept jusqu'à la mise en production, en clientèle réelle
+            et durant ma formation.
         </p>
     </div>
 </header>
 
-<!-- ===== FEATURED PROJECT ===== -->
+<!-- ===== FEATURED CLIENT PROJECTS ===== -->
 <section class="featured-section">
     <div class="featured-inner">
         <div class="featured-eyebrow">
-            <span></span>
-            Projet client · En production
+            Projets clients réels
         </div>
 
-        <a href="https://lynemeloche.com" target="_blank" class="featured-card">
-            <div class="featured-visual">
-                <div class="featured-live">Live</div>
-                <div class="featured-monogram">
-                    LM
-                    <small>Artiste Peintre</small>
+        <div class="featured-grid">
+
+            <!-- ========== DENISREID.COM ========== -->
+            <a href="https://www.denisreid.com" target="_blank" class="featured-card">
+                <div class="featured-visual">
+                    <div class="browser-frame">
+                        <div class="browser-bar">
+                            <div class="browser-dots">
+                                <span class="browser-dot"></span>
+                                <span class="browser-dot"></span>
+                                <span class="browser-dot"></span>
+                            </div>
+                            <div class="browser-url">denisreid.com</div>
+                        </div>
+                        <img
+                            src="images/denisreiddesktop.jpg"
+                            alt="Capture d'écran bureau du site denisreid.com réalisé par Elrhalia Noussairi"
+                            class="browser-img"
+                            loading="lazy">
+                    </div>
+                    <div class="phone-frame">
+                        <img
+                            src="images/denisreidmobil.jpg"
+                            alt="Version mobile du site denisreid.com"
+                            loading="lazy">
+                    </div>
                 </div>
-            </div>
-            <div class="featured-content">
-                <div class="featured-cat">WordPress · Site vitrine</div>
-                <h2 class="featured-title">
-                    lynemeloche<em>.com</em>
-                </h2>
-                <p class="featured-desc">
-                    Site vitrine conçu pour une artiste peintre à Charlevoix. Thème WordPress
-                    sur mesure, galerie d'œuvres interactive avec lightbox, formulaire de
-                    contact relié à une messagerie professionnelle via SMTP, et optimisation
-                    SEO complète sur les cinq pages du site.
-                </p>
-                <div class="featured-tags">
-                    <span class="tag-pill">WordPress</span>
-                    <span class="tag-pill">PHP</span>
-                    <span class="tag-pill">Custom Post Types</span>
-                    <span class="tag-pill">SEO</span>
-                    <span class="tag-pill">SMTP</span>
-                    <span class="tag-pill">Client réel</span>
+                <div class="featured-content">
+                    <div class="featured-cat">WordPress · Client réel</div>
+                    <h2 class="featured-title">
+                        denisreid<em>.com</em>
+                    </h2>
+                    <p class="featured-desc">
+                        Site professionnel conçu pour un client réel : thème Neve personnalisé,
+                        extensions PHP sur mesure, rédaction de contenu, optimisation SEO et
+                        déploiement complet en production.
+                    </p>
+                    <div class="featured-tags">
+                        <span class="tag-pill">WordPress</span>
+                        <span class="tag-pill">Neve</span>
+                        <span class="tag-pill">PHP custom</span>
+                        <span class="tag-pill">SEO</span>
+                        <span class="tag-pill">Client réel</span>
+                    </div>
+                    <span class="btn-featured">
+                        Visiter le site <i class="bi bi-arrow-up-right"></i>
+                    </span>
                 </div>
-                <span class="btn-featured">
-                    Visiter le site <i class="bi bi-arrow-up-right"></i>
-                </span>
-            </div>
-        </a>
+            </a>
+
+            <!-- ========== LYNEMELOCHE.COM ========== -->
+            <a href="https://lynemeloche.com" target="_blank" class="featured-card reverse">
+                <div class="featured-visual">
+                    <div class="browser-frame">
+                        <div class="browser-bar">
+                            <div class="browser-dots">
+                                <span class="browser-dot"></span>
+                                <span class="browser-dot"></span>
+                                <span class="browser-dot"></span>
+                            </div>
+                            <div class="browser-url">lynemeloche.com</div>
+                        </div>
+                        <img
+                            src="images/lynemelochedesktop.jpg"
+                            alt="Capture d'écran bureau du site lynemeloche.com réalisé par Elrhalia Noussairi"
+                            class="browser-img"
+                            loading="lazy">
+                    </div>
+                    <div class="phone-frame">
+                        <img
+                            src="images/lynemelochemobile.jpg"
+                            alt="Version mobile du site lynemeloche.com"
+                            loading="lazy">
+                    </div>
+                </div>
+                <div class="featured-content">
+                    <div class="featured-cat">WordPress · Client réel</div>
+                    <h2 class="featured-title">
+                        lynemeloche<em>.com</em>
+                    </h2>
+                    <p class="featured-desc">
+                        Site vitrine conçu pour une artiste peintre à Charlevoix : thème
+                        personnalisé, galerie d'œuvres interactive avec lightbox, formulaire
+                        de contact relié à une messagerie professionnelle via SMTP et
+                        optimisation SEO complète sur les cinq pages du site.
+                    </p>
+                    <div class="featured-tags">
+                        <span class="tag-pill">WordPress</span>
+                        <span class="tag-pill">PHP custom</span>
+                        <span class="tag-pill">Custom Post Types</span>
+                        <span class="tag-pill">SEO</span>
+                        <span class="tag-pill">SMTP</span>
+                    </div>
+                    <span class="btn-featured">
+                        Visiter le site <i class="bi bi-arrow-up-right"></i>
+                    </span>
+                </div>
+            </a>
+
+        </div>
     </div>
 </section>
 
-<!-- ===== WORDPRESS PROJECTS ===== -->
+<!-- ===== AUTRES PROJETS ===== -->
 <section class="projects-section">
     <div class="section-inner">
 
         <div class="cat-header">
             <h2 class="cat-title">
                 <span class="cat-num">01</span>
-                Sites WordPress
+                Intégration · HTML / CSS / Bootstrap
             </h2>
-            <span class="cat-meta">2 projets en production</span>
+            <span class="cat-meta">3 projets</span>
         </div>
 
         <div class="projects-grid">
 
-            <!-- denisreid.com -->
-            <a href="https://www.denisreid.com" target="_blank" class="proj-card">
-                <div class="proj-visual wp">
-                    <i class="bi bi-globe2 proj-visual-icon"></i>
-                    <span class="proj-badge">Live</span>
-                </div>
-                <div class="proj-body">
-                    <div class="proj-cat">Projet client</div>
-                    <h3 class="proj-title">denisreid.com</h3>
-                    <p class="proj-desc">
-                        Site professionnel conçu pour un client réel : thème personnalisé,
-                        rédaction de contenu et déploiement complet en production.
-                    </p>
-                    <div class="proj-tags">
-                        <span class="tag">WordPress</span>
-                        <span class="tag">PHP</span>
-                        <span class="tag">Client réel</span>
-                    </div>
-                    <span class="proj-link">
-                        Visiter le site <i class="bi bi-arrow-up-right"></i>
-                    </span>
-                </div>
-            </a>
-
-            <!-- Cuisine Marocaine -->
             <a href="https://elrhalianoussairi.github.io/-TP3_Noussairi_Elrhalia/" target="_blank" class="proj-card">
                 <div class="proj-visual html">
                     <i class="bi bi-egg-fried proj-visual-icon"></i>
@@ -790,9 +895,54 @@
                 </div>
             </a>
 
+            <a href="https://elrhalianoussairi.github.io/Projet_synthese_elrhalia" target="_blank" class="proj-card">
+                <div class="proj-visual html">
+                    <i class="bi bi-house-heart proj-visual-icon"></i>
+                    <span class="proj-badge">Projet synthèse</span>
+                </div>
+                <div class="proj-body">
+                    <div class="proj-cat">Intégration web</div>
+                    <h3 class="proj-title">Maison Mère</h3>
+                    <p class="proj-desc">
+                        Intégration web complète du design Figma avec animations CSS
+                        et interface responsive.
+                    </p>
+                    <div class="proj-tags">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">Bootstrap</span>
+                    </div>
+                    <span class="proj-link">
+                        Voir le projet <i class="bi bi-arrow-up-right"></i>
+                    </span>
+                </div>
+            </a>
+
+            <a href="https://elrhalianoussairi.github.io/TP2_Noussairi-Elrhalia_Gurulea-Evgeniya-/" target="_blank" class="proj-card">
+                <div class="proj-visual html">
+                    <i class="bi bi-film proj-visual-icon"></i>
+                    <span class="proj-badge">Équipe</span>
+                </div>
+                <div class="proj-body">
+                    <div class="proj-cat">Site immersif</div>
+                    <h3 class="proj-title">Interstellar</h3>
+                    <p class="proj-desc">
+                        Site responsive sur le film Interstellar réalisé en équipe
+                        avec animations CSS et design immersif.
+                    </p>
+                    <div class="proj-tags">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">Équipe</span>
+                    </div>
+                    <span class="proj-link">
+                        Voir le projet <i class="bi bi-arrow-up-right"></i>
+                    </span>
+                </div>
+            </a>
+
         </div>
 
-        <!-- ===== FIGMA PROJECTS ===== -->
         <div class="cat-header">
             <h2 class="cat-title">
                 <span class="cat-num">02</span>
@@ -803,7 +953,6 @@
 
         <div class="projects-grid">
 
-            <!-- Wabasso -->
             <a href="https://www.figma.com/proto/MCoSc0UHSjZiQVvlxnyWvV/Refonte-page-accueil-Site-Wabasso?node-id=1-85" target="_blank" class="proj-card">
                 <div class="proj-visual figma">
                     <i class="bi bi-building proj-visual-icon"></i>
@@ -813,8 +962,8 @@
                     <div class="proj-cat">Refonte · UI Design</div>
                     <h3 class="proj-title">Site Wabasso</h3>
                     <p class="proj-desc">
-                        Maquette fonctionnelle complète de la page d'accueil : structure,
-                        visuels, design system et composants réutilisables.
+                        Maquette fonctionnelle complète de la page d'accueil :
+                        structure, visuels et design system réutilisable.
                     </p>
                     <div class="proj-tags">
                         <span class="tag">Figma</span>
@@ -826,7 +975,6 @@
                 </div>
             </a>
 
-            <!-- Maison Mère -->
             <a href="https://www.figma.com/proto/AsuWNTsrwV9bUZIMkOllij/Design-site--Maison-M%C3%A8re?node-id=1-4" target="_blank" class="proj-card">
                 <div class="proj-visual figma">
                     <i class="bi bi-house-heart proj-visual-icon"></i>
@@ -836,8 +984,8 @@
                     <div class="proj-cat">Refonte · UX</div>
                     <h3 class="proj-title">Maison Mère</h3>
                     <p class="proj-desc">
-                        Interface moderne repensée avec prototypage interactif pour une
-                        navigation fluide et une expérience utilisateur optimisée.
+                        Interface moderne repensée avec prototypage interactif pour
+                        une navigation fluide et une expérience optimisée.
                     </p>
                     <div class="proj-tags">
                         <span class="tag">Figma</span>
@@ -850,7 +998,6 @@
                 </div>
             </a>
 
-            <!-- Zoo Falardeau -->
             <a href="https://www.figma.com/proto/evcz52XiIVd6ounHR4g2jY/Refaire-la-page-activites-du-site-ZOO-Falardeau?node-id=1-56" target="_blank" class="proj-card">
                 <div class="proj-visual figma">
                     <i class="bi bi-palette proj-visual-icon"></i>
@@ -861,7 +1008,7 @@
                     <h3 class="proj-title">Zoo Falardeau</h3>
                     <p class="proj-desc">
                         Page activités et événements conçue sous forme de maquette
-                        fonctionnelle avec prototypage interactif complet.
+                        fonctionnelle avec prototypage interactif.
                     </p>
                     <div class="proj-tags">
                         <span class="tag">Figma</span>
