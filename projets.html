@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Projets de Elrhalia Noussairi — Designer & Intégratrice Web. Sites WordPress, UI/UX Figma et intégrations front-end.">
+    <meta name="description" content="Portfolio de Elrhalia Noussairi — Designer & Intégratrice Web. Projets réalisés en design web, intégration front-end et WordPress.">
     <title>Projets — Elrhalia Noussairi</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%238B3A62'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia,serif' font-weight='600' font-size='13' fill='%23FBF7F4' letter-spacing='0.5'%3EEN%3C/text%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -156,34 +156,62 @@
         .page-title em { font-style: italic; color: var(--accent); }
         .page-subtitle {
             color: var(--ink-soft);
-            max-width: 540px;
+            max-width: 600px;
             font-size: 1.05rem;
             line-height: 1.7;
         }
 
-        /* ===== FEATURED CLIENT PROJECTS ===== */
-        .featured-section {
-            padding: 5.5rem 3rem;
-            background: var(--surface);
+        /* ===== SECTION BASE ===== */
+        .section-block { padding: 6rem 3rem; }
+        .section-block.alt { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+        .section-inner { max-width: 1200px; margin: 0 auto; }
+
+        .section-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 3.5rem;
+            padding-bottom: 1.5rem;
             border-bottom: 1px solid var(--border);
         }
-        .featured-inner { max-width: 1200px; margin: 0 auto; }
-
-        .featured-eyebrow {
-            display: inline-flex; align-items: center; gap: 10px;
+        .section-head-left { max-width: 680px; }
+        .section-num {
+            display: block;
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            font-style: italic;
             color: var(--accent);
-            font-size: 0.72rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            font-weight: 500;
-            margin-bottom: 2.5rem;
+            margin-bottom: 0.5rem;
         }
-        .featured-eyebrow::before {
-            content: '';
-            width: 28px; height: 1px;
-            background: var(--accent);
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(1.75rem, 3.5vw, 2.6rem);
+            font-weight: 400;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            color: var(--ink);
+            margin-bottom: 0.75rem;
+        }
+        .section-title em { font-style: italic; color: var(--accent); }
+        .section-desc {
+            color: var(--ink-soft);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        .section-count {
+            font-size: 0.78rem;
+            color: var(--muted);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 6px 14px;
+            border: 1px solid var(--border-strong);
+            border-radius: 100px;
+            white-space: nowrap;
         }
 
+        /* ===== FEATURED CLIENT PROJECTS ===== */
         .featured-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -199,6 +227,8 @@
             border-radius: 22px;
             overflow: hidden;
             transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+            text-decoration: none;
+            color: inherit;
         }
         .featured-card:hover {
             border-color: var(--border-strong);
@@ -208,14 +238,9 @@
         .featured-card.reverse {
             grid-template-columns: 1fr 1.15fr;
         }
-        .featured-card.reverse .featured-visual {
-            order: 2;
-        }
-        .featured-card.reverse .featured-content {
-            order: 1;
-        }
+        .featured-card.reverse .featured-visual { order: 2; }
+        .featured-card.reverse .featured-content { order: 1; }
 
-        /* Visual container */
         .featured-visual {
             position: relative;
             background:
@@ -230,7 +255,7 @@
             min-height: 480px;
         }
 
-        /* ===== BROWSER FRAME ===== */
+        /* Browser frame */
         .browser-frame {
             width: 100%;
             max-width: 460px;
@@ -251,16 +276,8 @@
             gap: 0.65rem;
             border-bottom: 1px solid rgba(43, 30, 39, 0.06);
         }
-        .browser-dots {
-            display: flex;
-            gap: 6px;
-            flex-shrink: 0;
-        }
-        .browser-dot {
-            width: 10px; height: 10px;
-            border-radius: 50%;
-            background: #D4CCC5;
-        }
+        .browser-dots { display: flex; gap: 6px; flex-shrink: 0; }
+        .browser-dot { width: 10px; height: 10px; border-radius: 50%; }
         .browser-dot:nth-child(1) { background: #E5A99A; }
         .browser-dot:nth-child(2) { background: #EBCE9A; }
         .browser-dot:nth-child(3) { background: #B5CFAE; }
@@ -272,7 +289,6 @@
             font-size: 0.68rem;
             color: var(--muted);
             font-weight: 500;
-            letter-spacing: 0.02em;
             text-align: center;
             overflow: hidden;
             white-space: nowrap;
@@ -287,7 +303,7 @@
             object-position: top;
         }
 
-        /* ===== PHONE FRAME (overlap) ===== */
+        /* Phone frame */
         .phone-frame {
             position: absolute;
             bottom: 1.75rem;
@@ -325,7 +341,6 @@
             background: #FFFFFF;
         }
 
-        /* ===== CONTENT ===== */
         .featured-content {
             padding: 3.5rem 3rem;
             display: flex;
@@ -375,108 +390,68 @@
             color: var(--bg);
             padding: 0.85rem 1.75rem;
             border-radius: 100px;
-            font-family: var(--font-body);
             font-weight: 500;
             font-size: 0.88rem;
-            text-decoration: none;
             transition: transform 0.25s, background 0.25s, box-shadow 0.25s;
             width: fit-content;
         }
-        .btn-featured:hover {
+        .featured-card:hover .btn-featured {
             background: var(--accent-hover);
             transform: translateY(-2px);
             box-shadow: 0 12px 30px -10px rgba(139, 58, 98, 0.5);
         }
         .btn-featured i { transition: transform 0.25s; }
-        .btn-featured:hover i { transform: translate(3px, -3px); }
+        .featured-card:hover .btn-featured i { transform: translate(3px, -3px); }
 
-        /* ===== SECTION BASE ===== */
-        .projects-section { padding: 6rem 3rem; }
-        .section-inner { max-width: 1200px; margin: 0 auto; }
-
-        .cat-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: 2.5rem;
-            padding-bottom: 1.25rem;
-            border-bottom: 1px solid var(--border);
-        }
-        .cat-title {
-            font-family: var(--font-display);
-            font-size: 1.65rem;
-            font-weight: 500;
-            letter-spacing: -0.015em;
-            color: var(--ink);
-            display: flex;
-            align-items: baseline;
-            gap: 1rem;
-        }
-        .cat-num {
-            font-family: var(--font-display);
-            font-size: 0.85rem;
-            font-style: italic;
-            color: var(--accent);
-        }
-        .cat-meta {
-            font-size: 0.8rem;
-            color: var(--muted);
-        }
-
-        .projects-grid {
+        /* ===== CASE STUDY CARDS (UI/UX) ===== */
+        .case-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 5rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.75rem;
         }
-        .projects-grid:last-child { margin-bottom: 0; }
-
-        .proj-card {
-            background: var(--surface);
+        .case-card {
+            background: var(--bg);
             border: 1px solid var(--border);
-            border-radius: 16px;
+            border-radius: 18px;
             overflow: hidden;
             transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
             display: flex; flex-direction: column;
             text-decoration: none;
             color: inherit;
         }
-        .proj-card:hover {
+        .case-card:hover {
             transform: translateY(-5px);
             border-color: var(--border-strong);
-            box-shadow: 0 20px 45px -25px rgba(139, 58, 98, 0.28);
+            box-shadow: 0 22px 50px -28px rgba(139, 58, 98, 0.28);
         }
-
-        .proj-visual {
-            height: 180px;
+        .case-visual {
+            height: 200px;
+            background:
+                radial-gradient(circle at 30% 30%, rgba(217, 174, 164, 0.4) 0%, transparent 60%),
+                var(--surface-alt);
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
             overflow: hidden;
         }
-        .proj-visual::after {
+        .case-visual::before {
             content: '';
             position: absolute; inset: 0;
             background-image:
                 linear-gradient(rgba(139, 58, 98, 0.06) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(139, 58, 98, 0.06) 1px, transparent 1px);
             background-size: 32px 32px;
-            opacity: 0.5;
+            opacity: 0.6;
         }
-        .proj-visual.figma { background: linear-gradient(135deg, #F5E7EE 0%, #EED4E0 100%); }
-        .proj-visual.html { background: linear-gradient(135deg, #F0EBE4 0%, #E5DDD3 100%); }
-
-        .proj-visual-icon {
+        .case-icon {
             font-size: 3rem;
             color: var(--accent);
             opacity: 0.55;
             position: relative;
             z-index: 1;
         }
-        .proj-badge {
+        .case-badge {
             position: absolute; top: 14px; left: 14px;
             background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(8px);
@@ -490,13 +465,12 @@
             text-transform: uppercase;
             z-index: 2;
         }
-
-        .proj-body {
-            padding: 1.5rem 1.6rem 1.65rem;
+        .case-body {
+            padding: 1.65rem 1.75rem 1.75rem;
             flex: 1;
             display: flex; flex-direction: column;
         }
-        .proj-cat {
+        .case-cat {
             font-size: 0.68rem;
             letter-spacing: 0.15em;
             text-transform: uppercase;
@@ -504,50 +478,192 @@
             font-weight: 500;
             margin-bottom: 0.6rem;
         }
-        .proj-title {
+        .case-title {
             font-family: var(--font-display);
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             font-weight: 500;
             letter-spacing: -0.01em;
             color: var(--ink);
-            margin-bottom: 0.65rem;
+            margin-bottom: 1rem;
             line-height: 1.2;
         }
-        .proj-desc {
+        .case-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            margin-bottom: 1.1rem;
+            padding-bottom: 1.1rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .case-meta-row {
+            display: flex;
+            gap: 0.75rem;
+            font-size: 0.82rem;
+            line-height: 1.5;
+        }
+        .case-meta-label {
+            color: var(--accent);
+            font-weight: 500;
+            flex-shrink: 0;
+            min-width: 70px;
+            font-size: 0.75rem;
+            letter-spacing: 0.03em;
+        }
+        .case-meta-value {
+            color: var(--ink-soft);
+        }
+        .case-desc {
             font-size: 0.87rem;
             color: var(--ink-soft);
             line-height: 1.65;
             flex: 1;
+            margin-bottom: 1.1rem;
         }
-        .proj-tags {
-            display: flex; flex-wrap: wrap; gap: 6px; margin-top: 1.1rem;
+        .case-tags {
+            display: flex; flex-wrap: wrap; gap: 5px;
+            margin-bottom: 1.1rem;
         }
         .tag {
             background: transparent;
             color: var(--muted);
             padding: 3px 10px;
             border-radius: 100px;
-            font-size: 0.7rem;
+            font-size: 0.68rem;
             border: 1px solid var(--border);
         }
-        .proj-link {
+        .case-link {
             display: inline-flex; align-items: center; gap: 6px;
             color: var(--accent);
             font-size: 0.82rem;
             font-weight: 500;
-            margin-top: 1.25rem;
+            transition: gap 0.25s;
+            width: fit-content;
+            margin-top: auto;
+        }
+        .case-card:hover .case-link { gap: 10px; }
+
+        /* ===== INTEGRATION CARDS ===== */
+        .integration-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .integration-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem 1.85rem 1.85rem;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
             text-decoration: none;
+            color: inherit;
+            position: relative;
+            overflow: hidden;
+        }
+        .integration-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 0; height: 3px;
+            background: var(--accent);
+            transition: width 0.4s;
+        }
+        .integration-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--border-strong);
+            box-shadow: 0 20px 45px -25px rgba(139, 58, 98, 0.28);
+        }
+        .integration-card:hover::before { width: 100%; }
+
+        .integration-head {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+        .integration-icon {
+            width: 48px; height: 48px;
+            border-radius: 12px;
+            background: var(--rose-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-size: 1.35rem;
+            flex-shrink: 0;
+        }
+        .integration-tag {
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent);
+            padding: 4px 10px;
+            border: 1px solid var(--border-strong);
+            border-radius: 100px;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+        .integration-title {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            color: var(--ink);
+            margin-bottom: 0.5rem;
+            line-height: 1.25;
+        }
+        .integration-objective {
+            font-size: 0.82rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+        .integration-skills {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.45rem;
+            margin-bottom: 1.25rem;
+            flex: 1;
+        }
+        .integration-skills li {
+            font-size: 0.83rem;
+            color: var(--ink-soft);
+            line-height: 1.5;
+            padding-left: 1.15rem;
+            position: relative;
+        }
+        .integration-skills li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.55em;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: var(--accent);
+            opacity: 0.6;
+        }
+        .integration-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--accent);
+            font-size: 0.82rem;
+            font-weight: 500;
             transition: gap 0.25s;
             width: fit-content;
         }
-        .proj-card:hover .proj-link { gap: 10px; }
+        .integration-card:hover .integration-link { gap: 10px; }
 
         /* ===== CTA ===== */
         .cta-section {
             padding: 6rem 3rem;
             background: var(--surface);
             border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -590,7 +706,6 @@
             color: var(--bg);
             padding: 0.9rem 1.9rem;
             border-radius: 100px;
-            font-family: var(--font-body);
             font-weight: 500;
             font-size: 0.88rem;
             text-decoration: none;
@@ -643,10 +758,7 @@
             color: var(--accent);
             background: rgba(139, 58, 98, 0.04);
         }
-        .copyright {
-            color: var(--muted);
-            font-size: 0.78rem;
-        }
+        .copyright { color: var(--muted); font-size: 0.78rem; }
 
         /* ===== ANIMATIONS ===== */
         @keyframes fadeUp {
@@ -673,7 +785,7 @@
             nav { padding: 1.1rem 1.5rem; }
             .nav-links { display: none; }
             .page-header { padding: 8rem 1.5rem 4rem; }
-            .featured-section { padding: 4rem 1.5rem; }
+            .section-block { padding: 4rem 1.5rem; }
             .featured-card,
             .featured-card.reverse { grid-template-columns: 1fr; }
             .featured-card.reverse .featured-visual { order: 1; }
@@ -685,8 +797,7 @@
             .browser-img { max-height: 240px; }
             .featured-content { padding: 2.25rem 1.75rem; }
             .featured-title { font-size: 1.6rem; }
-            .projects-section { padding: 4rem 1.5rem; }
-            .cat-title { font-size: 1.35rem; }
+            .case-grid { grid-template-columns: 1fr; }
             .cta-section { padding: 4.5rem 1.5rem; }
             footer { flex-direction: column; text-align: center; padding: 2rem 1.5rem; }
             .footer-links { flex-wrap: wrap; justify-content: center; gap: 1rem; }
@@ -707,15 +818,9 @@
                 bottom: 1rem;
                 right: 1rem;
             }
-            .phone-frame::before {
-                width: 26px;
-                height: 3px;
-                top: 4px;
-            }
-            .phone-frame img {
-                max-height: 160px;
-                border-radius: 10px;
-            }
+            .phone-frame::before { width: 26px; height: 3px; top: 4px; }
+            .phone-frame img { max-height: 160px; border-radius: 10px; }
+            .case-meta-label { min-width: 60px; font-size: 0.7rem; }
         }
     </style>
 </head>
@@ -741,23 +846,32 @@
             <em>pensés avec soin.</em>
         </h1>
         <p class="page-subtitle">
-            Une sélection de sites web, interfaces UI/UX et intégrations front-end
-            menées du concept jusqu'à la mise en production, en clientèle réelle
-            et durant ma formation.
+            Découvrez une sélection de projets réalisés en design web,
+            intégration front-end et WordPress, de la conception à la mise en ligne.
         </p>
     </div>
 </header>
 
-<!-- ===== FEATURED CLIENT PROJECTS ===== -->
-<section class="featured-section">
-    <div class="featured-inner">
-        <div class="featured-eyebrow">
-            Projets clients réels
+<!-- ========== SECTION 1 : PROJETS CLIENTS ========== -->
+<section class="section-block">
+    <div class="section-inner">
+        <div class="section-head">
+            <div class="section-head-left">
+                <span class="section-num">— 01</span>
+                <h2 class="section-title">
+                    Projets réalisés <em>pour des clients</em>
+                </h2>
+                <p class="section-desc">
+                    Sites WordPress conçus et développés pour des clients, de la
+                    personnalisation du site jusqu'à sa mise en ligne.
+                </p>
+            </div>
+            <span class="section-count">2 projets</span>
         </div>
 
         <div class="featured-grid">
 
-            <!-- ========== DENISREID.COM ========== -->
+            <!-- DENISREID -->
             <a href="https://www.denisreid.com" target="_blank" class="featured-card">
                 <div class="featured-visual">
                     <div class="browser-frame">
@@ -769,35 +883,25 @@
                             </div>
                             <div class="browser-url">denisreid.com</div>
                         </div>
-                        <img
-                            src="images/denisreiddesktop.jpg"
-                            alt="Capture d'écran bureau du site denisreid.com réalisé par Elrhalia Noussairi"
-                            class="browser-img"
-                            loading="lazy">
+                        <img src="images/denisreiddesktop.jpg" alt="Site denisreid.com — vue bureau" class="browser-img" loading="lazy">
                     </div>
                     <div class="phone-frame">
-                        <img
-                            src="images/denisreidmobil.jpg"
-                            alt="Version mobile du site denisreid.com"
-                            loading="lazy">
+                        <img src="images/denisreidmobil.jpg" alt="Site denisreid.com — vue mobile" loading="lazy">
                     </div>
                 </div>
                 <div class="featured-content">
-                    <div class="featured-cat">WordPress · Client réel</div>
-                    <h2 class="featured-title">
-                        denisreid<em>.com</em>
-                    </h2>
+                    <div class="featured-cat">Site vitrine · WordPress</div>
+                    <h3 class="featured-title">denisreid<em>.com</em></h3>
                     <p class="featured-desc">
-                        Site professionnel conçu pour un client réel : thème Neve personnalisé,
-                        extensions PHP sur mesure, rédaction de contenu, optimisation SEO et
-                        déploiement complet en production.
+                        Création d'un site vitrine pour un artiste, avec personnalisation
+                        du thème, intégration du contenu, fonctionnalités PHP sur mesure
+                        et optimisation SEO.
                     </p>
                     <div class="featured-tags">
                         <span class="tag-pill">WordPress</span>
                         <span class="tag-pill">Neve</span>
                         <span class="tag-pill">PHP custom</span>
                         <span class="tag-pill">SEO</span>
-                        <span class="tag-pill">Client réel</span>
                     </div>
                     <span class="btn-featured">
                         Visiter le site <i class="bi bi-arrow-up-right"></i>
@@ -805,7 +909,7 @@
                 </div>
             </a>
 
-            <!-- ========== LYNEMELOCHE.COM ========== -->
+            <!-- LYNEMELOCHE -->
             <a href="https://lynemeloche.com" target="_blank" class="featured-card reverse">
                 <div class="featured-visual">
                     <div class="browser-frame">
@@ -817,29 +921,19 @@
                             </div>
                             <div class="browser-url">lynemeloche.com</div>
                         </div>
-                        <img
-                            src="images/lynemelochedesktop.jpg"
-                            alt="Capture d'écran bureau du site lynemeloche.com réalisé par Elrhalia Noussairi"
-                            class="browser-img"
-                            loading="lazy">
+                        <img src="images/lynemelochedesktop.jpg" alt="Site lynemeloche.com — vue bureau" class="browser-img" loading="lazy">
                     </div>
                     <div class="phone-frame">
-                        <img
-                            src="images/lynemelochemobile.jpg"
-                            alt="Version mobile du site lynemeloche.com"
-                            loading="lazy">
+                        <img src="images/lynemelochemobile.jpg" alt="Site lynemeloche.com — vue mobile" loading="lazy">
                     </div>
                 </div>
                 <div class="featured-content">
-                    <div class="featured-cat">WordPress · Client réel</div>
-                    <h2 class="featured-title">
-                        lynemeloche<em>.com</em>
-                    </h2>
+                    <div class="featured-cat">Site vitrine · WordPress</div>
+                    <h3 class="featured-title">lynemeloche<em>.com</em></h3>
                     <p class="featured-desc">
-                        Site vitrine conçu pour une artiste peintre à Charlevoix : thème
-                        personnalisé, galerie d'œuvres interactive avec lightbox, formulaire
-                        de contact relié à une messagerie professionnelle via SMTP et
-                        optimisation SEO complète sur les cinq pages du site.
+                        Création d'un site vitrine pour une artiste peintre de Charlevoix,
+                        avec galerie d'œuvres interactive, formulaire de contact
+                        professionnel et optimisation SEO.
                     </p>
                     <div class="featured-tags">
                         <span class="tag-pill">WordPress</span>
@@ -858,171 +952,206 @@
     </div>
 </section>
 
-<!-- ===== AUTRES PROJETS ===== -->
-<section class="projects-section">
+<!-- ========== SECTION 2 : ÉTUDES DE CAS UI/UX ========== -->
+<section class="section-block alt">
     <div class="section-inner">
-
-        <div class="cat-header">
-            <h2 class="cat-title">
-                <span class="cat-num">01</span>
-                Intégration · HTML / CSS / Bootstrap
-            </h2>
-            <span class="cat-meta">3 projets</span>
+        <div class="section-head">
+            <div class="section-head-left">
+                <span class="section-num">— 02</span>
+                <h2 class="section-title">
+                    Études de cas <em>UI/UX</em>
+                </h2>
+                <p class="section-desc">
+                    Maquettes et prototypes réalisés dans Figma : analyse du besoin,
+                    wireframes, design system et prototypage interactif.
+                </p>
+            </div>
+            <span class="section-count">2 projets</span>
         </div>
 
-        <div class="projects-grid">
+        <div class="case-grid">
 
-            <a href="https://elrhalianoussairi.github.io/-TP3_Noussairi_Elrhalia/" target="_blank" class="proj-card">
-                <div class="proj-visual html">
-                    <i class="bi bi-egg-fried proj-visual-icon"></i>
-                    <span class="proj-badge">HTML/CSS</span>
+            <!-- MAISON MÈRE FIGMA -->
+            <a href="https://www.figma.com/proto/AsuWNTsrwV9bUZIMkOllij/Design-site--Maison-M%C3%A8re?node-id=1-4" target="_blank" class="case-card">
+                <div class="case-visual">
+                    <i class="bi bi-house-heart case-icon"></i>
+                    <span class="case-badge">Figma</span>
                 </div>
-                <div class="proj-body">
-                    <div class="proj-cat">Site responsive</div>
-                    <h3 class="proj-title">Cuisine Marocaine</h3>
-                    <p class="proj-desc">
-                        Site dédié à la cuisine marocaine avec recettes, galerie photo
-                        et blog intégrés. Design entièrement responsive.
-                    </p>
-                    <div class="proj-tags">
-                        <span class="tag">HTML5</span>
-                        <span class="tag">CSS3</span>
-                        <span class="tag">Bootstrap</span>
+                <div class="case-body">
+                    <div class="case-cat">Refonte UX · Design System</div>
+                    <h3 class="case-title">Refonte Maison Mère</h3>
+                    <div class="case-meta">
+                        <div class="case-meta-row">
+                            <span class="case-meta-label">Objectif</span>
+                            <span class="case-meta-value">Clarifier la navigation et l'organisation du contenu</span>
+                        </div>
+                        <div class="case-meta-row">
+                            <span class="case-meta-label">Mon rôle</span>
+                            <span class="case-meta-value">Wireframes, UI, prototypage interactif</span>
+                        </div>
                     </div>
-                    <span class="proj-link">
-                        Voir le projet <i class="bi bi-arrow-up-right"></i>
-                    </span>
-                </div>
-            </a>
-
-            <a href="https://elrhalianoussairi.github.io/Projet_synthese_elrhalia" target="_blank" class="proj-card">
-                <div class="proj-visual html">
-                    <i class="bi bi-house-heart proj-visual-icon"></i>
-                    <span class="proj-badge">Projet synthèse</span>
-                </div>
-                <div class="proj-body">
-                    <div class="proj-cat">Intégration web</div>
-                    <h3 class="proj-title">Maison Mère</h3>
-                    <p class="proj-desc">
-                        Intégration web complète du design Figma avec animations CSS
-                        et interface responsive.
+                    <p class="case-desc">
+                        Refonte de l'interface avec création d'un design system cohérent
+                        et prototypage interactif dans Figma afin de clarifier la navigation
+                        et l'organisation du contenu.
                     </p>
-                    <div class="proj-tags">
-                        <span class="tag">HTML5</span>
-                        <span class="tag">CSS3</span>
-                        <span class="tag">Bootstrap</span>
-                    </div>
-                    <span class="proj-link">
-                        Voir le projet <i class="bi bi-arrow-up-right"></i>
-                    </span>
-                </div>
-            </a>
-
-            <a href="https://elrhalianoussairi.github.io/TP2_Noussairi-Elrhalia_Gurulea-Evgeniya-/" target="_blank" class="proj-card">
-                <div class="proj-visual html">
-                    <i class="bi bi-film proj-visual-icon"></i>
-                    <span class="proj-badge">Équipe</span>
-                </div>
-                <div class="proj-body">
-                    <div class="proj-cat">Site immersif</div>
-                    <h3 class="proj-title">Interstellar</h3>
-                    <p class="proj-desc">
-                        Site responsive sur le film Interstellar réalisé en équipe
-                        avec animations CSS et design immersif.
-                    </p>
-                    <div class="proj-tags">
-                        <span class="tag">HTML5</span>
-                        <span class="tag">CSS3</span>
-                        <span class="tag">Équipe</span>
-                    </div>
-                    <span class="proj-link">
-                        Voir le projet <i class="bi bi-arrow-up-right"></i>
-                    </span>
-                </div>
-            </a>
-
-        </div>
-
-        <div class="cat-header">
-            <h2 class="cat-title">
-                <span class="cat-num">02</span>
-                Design UI/UX · Figma
-            </h2>
-            <span class="cat-meta">3 prototypes interactifs</span>
-        </div>
-
-        <div class="projects-grid">
-
-            <a href="https://www.figma.com/proto/MCoSc0UHSjZiQVvlxnyWvV/Refonte-page-accueil-Site-Wabasso?node-id=1-85" target="_blank" class="proj-card">
-                <div class="proj-visual figma">
-                    <i class="bi bi-building proj-visual-icon"></i>
-                    <span class="proj-badge">Figma</span>
-                </div>
-                <div class="proj-body">
-                    <div class="proj-cat">Refonte · UI Design</div>
-                    <h3 class="proj-title">Site Wabasso</h3>
-                    <p class="proj-desc">
-                        Maquette fonctionnelle complète de la page d'accueil :
-                        structure, visuels et design system réutilisable.
-                    </p>
-                    <div class="proj-tags">
+                    <div class="case-tags">
                         <span class="tag">Figma</span>
                         <span class="tag">Design System</span>
-                    </div>
-                    <span class="proj-link">
-                        Voir le prototype <i class="bi bi-arrow-up-right"></i>
-                    </span>
-                </div>
-            </a>
-
-            <a href="https://www.figma.com/proto/AsuWNTsrwV9bUZIMkOllij/Design-site--Maison-M%C3%A8re?node-id=1-4" target="_blank" class="proj-card">
-                <div class="proj-visual figma">
-                    <i class="bi bi-house-heart proj-visual-icon"></i>
-                    <span class="proj-badge">Figma</span>
-                </div>
-                <div class="proj-body">
-                    <div class="proj-cat">Refonte · UX</div>
-                    <h3 class="proj-title">Maison Mère</h3>
-                    <p class="proj-desc">
-                        Interface moderne repensée avec prototypage interactif pour
-                        une navigation fluide et une expérience optimisée.
-                    </p>
-                    <div class="proj-tags">
-                        <span class="tag">Figma</span>
                         <span class="tag">Prototypage</span>
-                        <span class="tag">Wireframes</span>
                     </div>
-                    <span class="proj-link">
+                    <span class="case-link">
                         Voir le prototype <i class="bi bi-arrow-up-right"></i>
                     </span>
                 </div>
             </a>
 
-            <a href="https://www.figma.com/proto/evcz52XiIVd6ounHR4g2jY/Refaire-la-page-activites-du-site-ZOO-Falardeau?node-id=1-56" target="_blank" class="proj-card">
-                <div class="proj-visual figma">
-                    <i class="bi bi-palette proj-visual-icon"></i>
-                    <span class="proj-badge">Figma</span>
+            <!-- WABASSO -->
+            <a href="https://www.figma.com/proto/MCoSc0UHSjZiQVvlxnyWvV/Refonte-page-accueil-Site-Wabasso?node-id=1-85" target="_blank" class="case-card">
+                <div class="case-visual">
+                    <i class="bi bi-building case-icon"></i>
+                    <span class="case-badge">Figma</span>
                 </div>
-                <div class="proj-body">
-                    <div class="proj-cat">Refonte · UI Design</div>
-                    <h3 class="proj-title">Zoo Falardeau</h3>
-                    <p class="proj-desc">
-                        Page activités et événements conçue sous forme de maquette
-                        fonctionnelle avec prototypage interactif.
+                <div class="case-body">
+                    <div class="case-cat">Refonte UI · Page d'accueil</div>
+                    <h3 class="case-title">Refonte Site Wabasso</h3>
+                    <div class="case-meta">
+                        <div class="case-meta-row">
+                            <span class="case-meta-label">Objectif</span>
+                            <span class="case-meta-value">Repenser la page d'accueil d'un site industriel</span>
+                        </div>
+                        <div class="case-meta-row">
+                            <span class="case-meta-label">Mon rôle</span>
+                            <span class="case-meta-value">Audit, maquette, design system</span>
+                        </div>
+                    </div>
+                    <p class="case-desc">
+                        Maquette complète de la page d'accueil avec hiérarchisation du
+                        contenu, création de composants réutilisables et amélioration
+                        du parcours utilisateur.
                     </p>
-                    <div class="proj-tags">
+                    <div class="case-tags">
                         <span class="tag">Figma</span>
                         <span class="tag">UI Design</span>
-                        <span class="tag">Prototypage</span>
+                        <span class="tag">Design System</span>
                     </div>
-                    <span class="proj-link">
+                    <span class="case-link">
                         Voir le prototype <i class="bi bi-arrow-up-right"></i>
                     </span>
                 </div>
             </a>
 
         </div>
+    </div>
+</section>
 
+<!-- ========== SECTION 3 : INTÉGRATIONS FRONT-END ========== -->
+<section class="section-block">
+    <div class="section-inner">
+        <div class="section-head">
+            <div class="section-head-left">
+                <span class="section-num">— 03</span>
+                <h2 class="section-title">
+                    Intégrations <em>front-end</em>
+                </h2>
+                <p class="section-desc">
+                    Projets réalisés en HTML, CSS et Bootstrap pour mettre en pratique
+                    l'intégration responsive, les animations et le travail en équipe.
+                </p>
+            </div>
+            <span class="section-count">3 projets</span>
+        </div>
+
+        <div class="integration-grid">
+
+            <!-- MAISON MÈRE HTML -->
+            <a href="https://elrhalianoussairi.github.io/Projet_synthese_elrhalia" target="_blank" class="integration-card">
+                <div class="integration-head">
+                    <div class="integration-icon">
+                        <i class="bi bi-code-slash"></i>
+                    </div>
+                    <span class="integration-tag">Pixel-perfect</span>
+                </div>
+                <h3 class="integration-title">Maison Mère — Intégration web</h3>
+                <p class="integration-objective">
+                    Reproduire fidèlement un design Figma complexe en HTML/CSS.
+                </p>
+                <ul class="integration-skills">
+                    <li>Fidélité au design source (spacing, typos, couleurs)</li>
+                    <li>Grilles responsive personnalisées (Flexbox + Grid)</li>
+                    <li>Menu de navigation mobile off-canvas</li>
+                    <li>Optimisation des images et lazy loading</li>
+                </ul>
+                <div class="case-tags">
+                    <span class="tag">HTML5</span>
+                    <span class="tag">CSS3</span>
+                    <span class="tag">Bootstrap</span>
+                    <span class="tag">Git</span>
+                </div>
+                <span class="integration-link">
+                    Voir le projet <i class="bi bi-arrow-up-right"></i>
+                </span>
+            </a>
+
+            <!-- CUISINE MAROCAINE -->
+            <a href="https://elrhalianoussairi.github.io/-TP3_Noussairi_Elrhalia/" target="_blank" class="integration-card">
+                <div class="integration-head">
+                    <div class="integration-icon">
+                        <i class="bi bi-grid-1x2"></i>
+                    </div>
+                    <span class="integration-tag">Bootstrap</span>
+                </div>
+                <h3 class="integration-title">Site vitrine responsive</h3>
+                <p class="integration-objective">
+                    Maîtriser Bootstrap 5 et créer une grille complexe multi-sections.
+                </p>
+                <ul class="integration-skills">
+                    <li>Système de grille Bootstrap adaptatif</li>
+                    <li>Galerie photo avec interactions JavaScript</li>
+                    <li>Système de blog statique avec catégories</li>
+                    <li>Responsive testé sur 4 breakpoints (mobile → 4K)</li>
+                </ul>
+                <div class="case-tags">
+                    <span class="tag">HTML5</span>
+                    <span class="tag">CSS3</span>
+                    <span class="tag">Bootstrap 5</span>
+                    <span class="tag">JS</span>
+                </div>
+                <span class="integration-link">
+                    Voir le projet <i class="bi bi-arrow-up-right"></i>
+                </span>
+            </a>
+
+            <!-- INTERSTELLAR -->
+            <a href="https://elrhalianoussairi.github.io/TP2_Noussairi-Elrhalia_Gurulea-Evgeniya-/" target="_blank" class="integration-card">
+                <div class="integration-head">
+                    <div class="integration-icon">
+                        <i class="bi bi-people"></i>
+                    </div>
+                    <span class="integration-tag">Équipe</span>
+                </div>
+                <h3 class="integration-title">Site immersif — Projet d'équipe</h3>
+                <p class="integration-objective">
+                    Collaborer en équipe sur un projet créatif avec animations avancées.
+                </p>
+                <ul class="integration-skills">
+                    <li>Animations CSS avancées (parallaxe, transitions)</li>
+                    <li>Coordination Git avec branches feature/</li>
+                    <li>Design immersif co-construit en équipe</li>
+                    <li>Respect du rôle de chaque membre</li>
+                </ul>
+                <div class="case-tags">
+                    <span class="tag">HTML5</span>
+                    <span class="tag">CSS3</span>
+                    <span class="tag">Bootstrap</span>
+                    <span class="tag">Git</span>
+                </div>
+                <span class="integration-link">
+                    Voir le projet <i class="bi bi-arrow-up-right"></i>
+                </span>
+            </a>
+
+        </div>
     </div>
 </section>
 
@@ -1034,8 +1163,8 @@
             <em>Discutons-en.</em>
         </h2>
         <p class="cta-sub">
-            Disponible pour des missions freelance, un stage ou une collaboration
-            à long terme. Réponse assurée sous 24 heures.
+            Disponible pour des projets freelance, un stage ou une collaboration
+            professionnelle. N'hésitez pas à me contacter pour discuter de votre projet.
         </p>
         <a href="contact.html" class="btn-cta">
             Me contacter <i class="bi bi-arrow-right"></i>
